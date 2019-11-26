@@ -7,6 +7,7 @@
 
 import React from 'react'
 import PropTypes from 'prop-types'
+import Helmet from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
 import { Global, css } from '@emotion/core'
 
@@ -18,6 +19,7 @@ const globalSyles = css`
     background-color: hsl(0, 0%, 13%);
     color: hsl(0, 0%, 100%);
     font-size: calc(14px + 0.25vw);
+    line-height: 1.65;
     font-family: futura-pt,sans-serif,sans-serif;
   }
 
@@ -28,7 +30,7 @@ const globalSyles = css`
 
 const style = css`
   main {
-    padding: 40px;
+    padding: 40px 80px;
   }
 `
 
@@ -51,6 +53,11 @@ const Layout = ({ children }) => {
         css={style}
       >
         <main>{children}</main>
+
+        <Helmet>
+          <link href="https://fonts.googleapis.com/css?family=Text+Me+One&display=swap" rel="stylesheet"/>
+        </Helmet>
+
       </div>
     </>
   )

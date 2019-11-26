@@ -4,13 +4,9 @@ import { Link } from 'gatsby'
 import { css } from '@emotion/core'
 
 const style = css`
-  background-color: hsl(0, 0%, 11%);
-  background: hsl(0, 0%, 13%);
-  background: -webkit-linear-gradient(to right, hsl(0, 0%, 11%), hsl(0, 0%, 13%));
-  background: linear-gradient(to right, hsl(0, 0%, 11%), hsl(0, 0%, 13%));
-
   padding: 20px;
   display: flex;
+  font-family: 'Text Me One',sans-serif;
 
   h1 {
     flex: 1;
@@ -49,8 +45,11 @@ const Header = ({ siteTitle }) => (
         <li>
           <Link to="/blog">Blog</Link>
         </li>
-        <li>
+        {/* <li>
           <Link to="/projects">Projects</Link>
+        </li> */}
+        <li>
+          <Link to="/tags">Tags</Link>
         </li>
       </ul>
     </nav>
