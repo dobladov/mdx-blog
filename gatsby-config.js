@@ -28,26 +28,20 @@ module.exports = {
       }
     },
     'gatsby-plugin-emotion',
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-mdx',
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'images',
+        path: `${__dirname}/src/images`
+      }
+    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'posts',
-        path: `${__dirname}/src/posts/`
-      }
-    },
-    {
-      resolve: 'gatsby-plugin-page-creator',
-      options: {
         path: `${__dirname}/src/posts`
-      }
-    },
-    {
-      resolve: 'gatsby-plugin-mdx',
-      options: {
-        defaultLayouts: {
-          posts: require.resolve('./src/components/posts.js'),
-          default: require.resolve('./src/components/layout.js')
-        }
       }
     },
     {
