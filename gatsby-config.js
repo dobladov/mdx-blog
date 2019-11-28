@@ -1,3 +1,6 @@
+const slug = require('remark-slug')
+const emoji = require('remark-emoji')
+
 module.exports = {
   siteMetadata: {
     title: 'Daniel Doblado',
@@ -29,7 +32,12 @@ module.exports = {
     },
     'gatsby-plugin-emotion',
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-mdx',
+    {
+      resolve: 'gatsby-plugin-mdx',
+      options: {
+        remarkPlugins: [slug, emoji]
+      }
+    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {

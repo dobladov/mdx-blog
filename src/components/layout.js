@@ -25,6 +25,11 @@ const globalSyles = css`
 
   a {
     color: hsl(0, 0%, 100%);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 `
 
