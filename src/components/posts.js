@@ -1,5 +1,5 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import { css } from '@emotion/core'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import Layout from './layout'
@@ -38,7 +38,7 @@ const toc = (items) => (
   <ul>
     {items.map(item => (
       <li>
-        <a href={item.url}>{item.title}</a>
+        <Link to={item.url}>{item.title}</Link>
         {item.items && (
           toc(item.items)
         )}
