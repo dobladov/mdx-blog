@@ -1,4 +1,5 @@
 const slug = require('remark-slug')
+const emoji = require('remark-emoji')
 
 module.exports = {
   siteMetadata: {
@@ -34,7 +35,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-mdx',
       options: {
-        remarkPlugins: [slug]
+        remarkPlugins: [slug, emoji]
       }
     },
     {
