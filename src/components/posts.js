@@ -22,6 +22,19 @@ const style = css`
   }
 `
 
+const toc = (items) => (
+  <ul>
+    {items.map(item => (
+      <li>
+        <a href={item.url}>{item.title}</a>
+        {item.items && (
+          toc(item.items)
+        )}
+      </li>
+    ))}
+  </ul>
+)
+
 const PostLayout = ({ data: { mdx } }) => (
   <Layout>
     <SEO title={mdx.frontmatter.title} description={mdx.excerpt} />
@@ -30,6 +43,9 @@ const PostLayout = ({ data: { mdx } }) => (
       <article>
         <MDXRenderer>{mdx.body}</MDXRenderer>
       </article>
+      <aside>
+        {toc(mdx.tableOfContents.items)}
+      </aside>
     </section>
   </Layout>
 )
