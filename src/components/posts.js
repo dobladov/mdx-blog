@@ -37,8 +37,8 @@ const style = css`
 const toc = (items) => (
   <ul>
     {items.map(item => (
-      <li>
-        <Link to={item.url}>{item.title}</Link>
+      <li key={item.link}>
+        <a href={item.url}>{item.title}</a>
         {item.items && (
           toc(item.items)
         )}
@@ -55,11 +55,27 @@ const PostLayout = ({ data: { mdx } }) => (
       <article>
         <MDXRenderer>{mdx.body}</MDXRenderer>
       </article>
-      {mdx.tableOfContents.items && (
-        <aside>
-          {toc(mdx.tableOfContents.items)}
-        </aside>
-      )}
+      <aside>
+        <div>
+            Time to read: {mdx.timeToRead} minutes
+        </div>
+        {mdx.frontmatter.tags && (
+          <div>
+            {mdx.frontmatter.tags.map(tag => (
+              <Link
+                to={`/tags/${tag}`}
+                key={tag}
+              >
+                #{tag}
+                &nbsp;
+              </Link>
+            ))}
+          </div>
+        )}
+        {mdx.tableOfContents.items && (
+          toc(mdx.tableOfContents.items)
+        )}
+      </aside>
     </section>
   </Layout>
 )
@@ -75,6 +91,7 @@ export const pageQuery = graphql`
       }
       frontmatter {
         title
+        tags
       }
       excerpt
       tableOfContents
