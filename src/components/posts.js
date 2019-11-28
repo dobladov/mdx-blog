@@ -6,15 +6,27 @@ import Layout from './layout'
 import SEO from '../components/seo'
 
 const style = css`
+  display: grid;
+  grid-template-areas: "title title"
+                       "article side";
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 20px;
+
   .postTitle {
     font-size: 3.7em;
     font-weight: 200;
     margin-top: 0;
     font-family: 'Text Me One', sans-serif;
+    grid-area: title;
   }
 
   article {
     max-width: 1000px;
+    grid-area: article;
+  }
+
+  aside {
+    grid-area: side;
   }
 
   a {
@@ -43,9 +55,11 @@ const PostLayout = ({ data: { mdx } }) => (
       <article>
         <MDXRenderer>{mdx.body}</MDXRenderer>
       </article>
-      <aside>
-        {toc(mdx.tableOfContents.items)}
-      </aside>
+      {mdx.tableOfContents.items && (
+        <aside>
+          {toc(mdx.tableOfContents.items)}
+        </aside>
+      )}
     </section>
   </Layout>
 )

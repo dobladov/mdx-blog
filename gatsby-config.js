@@ -1,3 +1,5 @@
+const slug = require('remark-slug')
+
 module.exports = {
   siteMetadata: {
     title: 'Daniel Doblado',
@@ -29,7 +31,12 @@ module.exports = {
     },
     'gatsby-plugin-emotion',
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-mdx',
+    {
+      resolve: 'gatsby-plugin-mdx',
+      options: {
+        remarkPlugins: [slug]
+      }
+    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
