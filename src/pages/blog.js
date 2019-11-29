@@ -32,7 +32,7 @@ const IndexPage = ({
     <Layout>
       <ul css={style}>
         {Object.entries(organizedPosts).map(([year, yearPosts]) => (
-          <li key="year">
+          <li key={year}>
             <h2>{year}</h2>
             <ul>
               {yearPosts.map(({ id, fields: { slug, date }, fileAbsolutePath, frontmatter: { title } }) => (
