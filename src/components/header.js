@@ -45,12 +45,6 @@ const Header = ({ siteTitle }) => (
         <li>
           <Link to="/blog">Blog</Link>
         </li>
-        {/* <li>
-          <Link to="/projects">Projects</Link>
-        </li> */}
-        <li>
-          <Link to="/tags">Tags</Link>
-        </li>
       </ul>
     </nav>
   </header>

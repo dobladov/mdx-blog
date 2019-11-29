@@ -7,7 +7,20 @@ import Tags from '../components/Tags'
 const formatter = new Intl.DateTimeFormat('en', { month: 'short' })
 
 const style = css`
-  list-style-type: none;
+  display: grid;
+  grid-template-areas: "content side";
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 20px;
+
+  > ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    li:first-child h2 {
+      margin-top: 0;
+    }
+  }
 `
 
 const IndexPage = ({
@@ -32,29 +45,33 @@ const IndexPage = ({
 
   return (
     <Layout>
-      <ul css={style}>
-        {Object.entries(organizedPosts).map(([year, yearPosts]) => (
-          <li key={year}>
-            <h2>{year}</h2>
-            <ul>
-              {yearPosts.map(({ id, fields: { slug, date }, fileAbsolutePath, frontmatter: { title } }) => (
-                <li key={id}>
-                  <span>
-                    {`${formatter.format(date)} ${date.getDate()}`}
-                  </span>
+      <section css={style}>
+        <ul>
+          {Object.entries(organizedPosts).map(([year, yearPosts]) => (
+            <li key={year}>
+              <h2>{year}</h2>
+              <ul>
+                {yearPosts.map(({ id, fields: { slug, date }, fileAbsolutePath, frontmatter: { title } }) => (
+                  <li key={id}>
+                    <span>
+                      {`${formatter.format(date)} ${date.getDate()}`}
+                    </span>
                   &nbsp;
-                  <span>
-                    <Link to={slug}>
-                      {title}
-                    </Link>
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </li>
-        ))}
-      </ul>
-      <Tags tags={tags} />
+                    <span>
+                      <Link to={slug}>
+                        {title}
+                      </Link>
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </li>
+          ))}
+        </ul>
+        <aside>
+          <Tags tags={tags} />
+        </aside>
+      </section>
     </Layout>
   )
 }

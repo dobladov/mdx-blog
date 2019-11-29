@@ -5,6 +5,7 @@ import { css } from '@emotion/core'
 const style = css`
     list-style-type: none;
     padding: 0;
+    margin: 0;
 `
 
 const Tags = ({ tags }) => {
