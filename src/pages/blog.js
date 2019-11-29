@@ -2,6 +2,7 @@ import React from 'react'
 import { graphql, Link } from 'gatsby'
 import { css } from '@emotion/core'
 import Layout from '../components/layout'
+import Tags from '../components/Tags'
 
 const formatter = new Intl.DateTimeFormat('en', { month: 'short' })
 
@@ -11,7 +12,8 @@ const style = css`
 
 const IndexPage = ({
   data: {
-    allMdx: { edges }
+    allMdx: { edges },
+    tags: { group: tags }
   }
 }) => {
   const posts = edges.map(edge => {
@@ -52,6 +54,7 @@ const IndexPage = ({
           </li>
         ))}
       </ul>
+      <Tags tags={tags} />
     </Layout>
   )
 }
@@ -75,6 +78,13 @@ export const pageQuery = graphql`
           tableOfContents
           timeToRead
         }
+      }
+    }
+
+    tags: allMdx {
+      group(field: frontmatter___tags) {
+        tag: fieldValue
+        totalCount
       }
     }
   }
