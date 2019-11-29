@@ -1,12 +1,7 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
-import { css } from '@emotion/core'
 import Layout from '../components/layout'
-
-const style = css`
-    list-style-type: none;
-    padding: 0;
-`
+import Tags from '../components/Tags'
 
 const IndexPage = ({
   data: {
@@ -15,17 +10,7 @@ const IndexPage = ({
 }) => {
   return (
     <Layout>
-      <ul css={style}>
-        {group.map(({ tag, totalCount }) => (
-          <li key={tag}>
-            <h2>
-              <Link to={`/tags/${tag}`}>
-                #{tag} ({totalCount})
-              </Link>
-            </h2>
-          </li>
-        ))}
-      </ul>
+      <Tags tags={group} />
     </Layout>
   )
 }
