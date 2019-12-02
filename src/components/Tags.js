@@ -16,7 +16,7 @@ const Tags = ({ tags, className }) => {
       {tags.sort((a, b) => a.totalCount < b.totalCount).map(({ tag, totalCount }, i) => (
         <li key={tag}>
           #
-          <Link to={`/tags/${tag}`}>
+          <Link rel="tag" to={`/tags/${tag}`}>
             {tag} ({totalCount})
           </Link>
           {(i < tags.length - 1) && (

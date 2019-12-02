@@ -57,6 +57,7 @@ const Header = ({ siteTitle }) => {
       <h1 style={{ margin: 0 }}>
         <Link
           to="/"
+          title="Daniel Doblado"
           style={{
             textDecoration: 'none'
           }}
@@ -65,7 +66,7 @@ const Header = ({ siteTitle }) => {
         </Link>
       </h1>
       <nav className="mainNav">
-        <ul>
+        <ul role="navigation">
           <li>
             <Link to="/blog">Blog</Link>
           </li>
@@ -96,6 +97,7 @@ const Header = ({ siteTitle }) => {
           </li>
           <li>
             <button
+              aria-label="Toggle dark theme"
               className="darkModeBtn"
               onClick={() => {
                 darkMode

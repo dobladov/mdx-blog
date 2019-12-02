@@ -24,6 +24,11 @@ module.exports = {
       options: {
         name: 'Daniel Doblado',
         short_name: 'DobladoV',
+        developer: {
+          name: 'Daniel Doblado',
+          url: 'https://github.com/dobladov'
+        },
+        lang: 'en-US',
         start_url: '/',
         background_color: 'hsl(0, 0%, 95%)',
         theme_color: 'hsl(180, 3%, 23%)',

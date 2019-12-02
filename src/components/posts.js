@@ -27,10 +27,10 @@ const style = css`
 `
 
 const toc = (items) => (
-  <ul>
+  <ul role="feed">
     {items.map(item => (
       <li key={item.link}>
-        <a href={item.url}>{item.title}</a>
+        <a rel="toc" href={item.url}>{item.title}</a>
         {item.items && (
           toc(item.items)
         )}

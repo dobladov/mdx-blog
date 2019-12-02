@@ -142,9 +142,7 @@ const Layout = ({ children }) => {
 
   useEffect(() => {
     const darkMode = JSON.parse(localStorage.getItem('darkMode'))
-    console.log(darkMode)
     if (darkMode === false) {
-      console.log('exec')
       document.body.classList.add('light')
     }
   }, [])

@@ -66,11 +66,11 @@ const blog = ({
             <li key={year}>
               <h2>{year}</h2>
               <ul>
-                {yearPosts.map(({ id, fields: { slug, date }, fileAbsolutePath, frontmatter: { title } }) => (
+                {yearPosts.map(({ id, fields: { slug, date }, frontmatter: { title } }) => (
                   <li key={id}>
-                    <span>
+                    <time dateTime={date.toISOString()}>
                       {`${formatter.format(date)} ${date.getDate()}`}
-                    </span>
+                    </time>
                   &nbsp;
                     <span>
                       <Link to={slug}>
@@ -97,7 +97,6 @@ export const pageQuery = graphql`
       edges {
         node {
           id
-          fileAbsolutePath
           frontmatter {
             title
             date
@@ -106,9 +105,6 @@ export const pageQuery = graphql`
             slug
             date
           }
-          excerpt
-          tableOfContents
-          timeToRead
         }
       }
     }
