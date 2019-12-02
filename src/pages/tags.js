@@ -16,7 +16,7 @@ const tags = ({
       <SEO title="Blog tags" description="All tags" />
       <section className="double">
         <h1 className="title">Blog tags</h1>
-        <Tags className="contnet" tags={group} />
+        <Tags className="content" tags={group} />
       </section>
     </Layout>
   )

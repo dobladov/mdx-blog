@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import { css } from '@emotion/core'
-import { Twitter, GitHub, Rss, Sun, Moon } from 'react-feather'
+import { Twitter, GitHub, Rss, Sun, Moon, Codepen, Mail } from 'react-feather'
 
 const style = css`
   padding: 20px 40px;
@@ -35,6 +35,10 @@ const style = css`
         border: none;
         background-color: transparent;
         color: var(--contrast);
+
+        &:hover {
+          color: var(--action);
+        }
       }
 
       a {
@@ -73,6 +77,16 @@ const Header = ({ siteTitle }) => {
           <li>
             <a target="_blank" rel="noopener noreferrer" href="https://github.com/dobladov">
               <GitHub />
+            </a>
+          </li>
+          <li>
+            <a target="_blank" rel="noopener noreferrer" href="https://codepen.io/dobladov">
+              <Codepen />
+            </a>
+          </li>
+          <li>
+            <a href="mailto:danieldoblado@gmail.com">
+              <Mail />
             </a>
           </li>
           <li>

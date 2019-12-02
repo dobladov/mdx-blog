@@ -5,8 +5,8 @@ const highlight = require('remark-highlight.js')
 module.exports = {
   siteMetadata: {
     title: 'Daniel Doblado',
-    description: 'Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.',
-    author: '@gatsbyjs'
+    description: 'I&apos;m a Front-end Developer currently based in Berlin 🇩🇪, with true passion for open-source and building better platforms.',
+    author: '@dobladev'
   },
   plugins: [
     'gatsby-plugin-react-helmet',

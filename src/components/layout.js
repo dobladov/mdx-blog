@@ -45,6 +45,7 @@ const globalSyles = css`
     &.light {
       --main-bg: hsl(0, 0%, 95%);
       --text: hsl(180, 3%, 39%);
+      --contrast: hsl(180, 3%, 23%);
     }
   }
 
@@ -93,13 +94,14 @@ const globalSyles = css`
     display: grid;
     grid-template-areas: "title title"
                           "article side";
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 2.5fr 1fr;
     grid-row-gap: 20px;
     grid-column-gap: 60px;
 
     .content {
       max-width: 1000px;
       grid-area: article;
+      font-size: 1.4rem;
     }
 
     aside {

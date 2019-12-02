@@ -17,10 +17,6 @@ const style = css`
     }
   }
 
-  article {
-    font-size: 1.4rem;
-  }
-
   .date {
     font-size: 1.5rem;
   }

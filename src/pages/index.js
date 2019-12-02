@@ -21,6 +21,7 @@ const IndexPage = () => (
   <Layout>
     <SEO
       title="Hello!"
+      description="I&apos;m a Front-end Developer currently based in Berlin 🇩🇪, with true passion for open-source and building better platforms."
     />
     <section css={style}>
       <h1 className="title">Hello!</h1>
