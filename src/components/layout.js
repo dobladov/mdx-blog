@@ -5,7 +5,7 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from 'react'
+import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
@@ -41,9 +41,10 @@ const globalSyles = css`
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
     line-height: 1.6;
     font-weight: 300;
-
-    .light {
-      --main-bg: hsl(0, 0%, 100%);
+    
+    &.light {
+      --main-bg: hsl(0, 0%, 95%);
+      --text: hsl(180, 3%, 39%);
     }
   }
 
@@ -136,6 +137,15 @@ const Layout = ({ children }) => {
       }
     }
   `)
+
+  useEffect(() => {
+    const darkMode = JSON.parse(localStorage.getItem('darkMode'))
+    console.log(darkMode)
+    if (darkMode === false) {
+      console.log('exec')
+      document.body.classList.add('light')
+    }
+  }, [])
 
   return (
     <>

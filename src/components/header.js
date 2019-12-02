@@ -1,19 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import { css } from '@emotion/core'
-import { Twitter, GitHub, Rss } from 'react-feather'
+import { Twitter, GitHub, Rss, Sun, Moon } from 'react-feather'
 
 const style = css`
   padding: 20px 40px;
   display: flex;
-  font-family: 'Text Me One',sans-serif;
+  font-family: 'Text Me One', sans-serif;
 
   h1 {
     flex: 1;
     margin: 0;
     display: flex;
     align-items: center;
+
+    a {
+      color: var(--text);
+    }
   }
 
   .mainNav {
@@ -21,10 +25,16 @@ const style = css`
       list-style-type: none;
       display: flex;
       font-size: 1.2rem;
-
+      
       svg {
         top: 6px;
         position: relative;
+      }
+
+      .darkModeBtn {
+        border: none;
+        background-color: transparent;
+        color: var(--contrast);
       }
 
       a {
@@ -35,43 +45,64 @@ const style = css`
   }
 `
 
-const Header = ({ siteTitle }) => (
-  <header css={style}>
-    <h1 style={{ margin: 0 }}>
-      <Link
-        to="/"
-        style={{
-          color: 'white',
-          textDecoration: 'none'
-        }}
-      >
-        {siteTitle}
-      </Link>
-    </h1>
-    <nav className="mainNav">
-      <ul>
-        <li>
-          <Link to="/blog">Blog</Link>
-        </li>
-        <li>
-          <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/dobladev">
-            <Twitter />
-          </a>
-        </li>
-        <li>
-          <a target="_blank" rel="noopener noreferrer" href="https://github.com/dobladov">
-            <GitHub />
-          </a>
-        </li>
-        <li>
-          <Link to="/feed.xml">
-            <Rss />
-          </Link>
-        </li>
-      </ul>
-    </nav>
-  </header>
-)
+const Header = ({ siteTitle }) => {
+  const [darkMode, setDarkMode] = useState(JSON.parse(localStorage.getItem('darkMode')))
+
+  return (
+    <header css={style}>
+      <h1 style={{ margin: 0 }}>
+        <Link
+          to="/"
+          style={{
+            textDecoration: 'none'
+          }}
+        >
+          {siteTitle}
+        </Link>
+      </h1>
+      <nav className="mainNav">
+        <ul>
+          <li>
+            <Link to="/blog">Blog</Link>
+          </li>
+          <li>
+            <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/dobladev">
+              <Twitter />
+            </a>
+          </li>
+          <li>
+            <a target="_blank" rel="noopener noreferrer" href="https://github.com/dobladov">
+              <GitHub />
+            </a>
+          </li>
+          <li>
+            <Link to="/feed.xml">
+              <Rss />
+            </Link>
+          </li>
+          <li>
+            <button
+              className="darkModeBtn"
+              onClick={() => {
+                darkMode
+                  ? document.body.classList.add('light')
+                  : document.body.classList.remove('light')
+                localStorage.setItem('darkMode', !darkMode)
+                setDarkMode(!darkMode)
+              }}
+            >
+              {darkMode ? (
+                <Sun />
+              ) : (
+                <Moon />
+              )}
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </header>
+  )
+}
 
 Header.propTypes = {
   siteTitle: PropTypes.string
