@@ -1,5 +1,7 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
+
+import SEO from '../components/seo'
 import Layout from '../components/layout'
 import Tags from '../components/Tags'
 
@@ -10,7 +12,11 @@ const IndexPage = ({
 }) => {
   return (
     <Layout>
-      <Tags tags={group} />
+      <SEO title="Blog tags" description="All tags" />
+      <section className="double">
+        <h1 className="title">Blog tags</h1>
+        <Tags className="contnet" tags={group} />
+      </section>
     </Layout>
   )
 }

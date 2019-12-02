@@ -2,36 +2,31 @@ import React from 'react'
 import { graphql, Link } from 'gatsby'
 import { css } from '@emotion/core'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
+
 import Layout from './layout'
 import SEO from '../components/seo'
 
-const style = css`
-  display: grid;
-  grid-template-areas: "title title"
-                       "article side";
-  grid-template-columns: 2fr 1fr;
-  grid-gap: 20px;
 
-  .postTitle {
-    font-size: 3.7em;
-    font-weight: 200;
-    margin-top: 0;
-    font-family: 'Text Me One', sans-serif;
-    grid-area: title;
+const formatter = new Intl.DateTimeFormat('en', { month: 'long' })
+
+const style = css`
+  .tags {
+    li {
+      display: inline-block;
+    }
   }
 
   article {
-    max-width: 1000px;
-    grid-area: article;
+    font-size: 1.4rem;
   }
 
-  aside {
-    grid-area: side;
+  .date {
+    font-size: 1.5rem;
   }
-
-  a {
-    color: #F9FFEE;
-  }
+  
+  .toc ul {
+    padding-left: 20px;
+  } 
 `
 
 const toc = (items) => (
@@ -47,38 +42,56 @@ const toc = (items) => (
   </ul>
 )
 
-const PostLayout = ({ data: { mdx } }) => (
-  <Layout>
-    <SEO title={mdx.frontmatter.title} description={mdx.excerpt} />
-    <section css={style}>
-      <h1 className="postTitle">{mdx.frontmatter.title}</h1>
-      <article>
-        <MDXRenderer>{mdx.body}</MDXRenderer>
-      </article>
-      <aside>
-        <div>
-            Time to read: {mdx.timeToRead} minutes
-        </div>
-        {mdx.frontmatter.tags && (
-          <div>
-            {mdx.frontmatter.tags.map(tag => (
-              <Link
-                to={`/tags/${tag}`}
-                key={tag}
-              >
-                #{tag}
-                &nbsp;
-              </Link>
-            ))}
+const PostLayout = ({ data: { mdx } }) => {
+  const date = new Date(mdx.fields.date)
+
+  return (
+    <Layout>
+      <SEO title={mdx.frontmatter.title} description={mdx.excerpt} />
+      <section css={style} className="double">
+        <h1 className="title">{mdx.frontmatter.title}</h1>
+        <article className="content">
+          <MDXRenderer>{mdx.body}</MDXRenderer>
+        </article>
+        <aside>
+          <div className="date">
+            {`${date.getDate()} ${formatter.format(date)} ${date.getFullYear()}`}
           </div>
-        )}
-        {mdx.tableOfContents.items && (
-          toc(mdx.tableOfContents.items)
-        )}
-      </aside>
-    </section>
-  </Layout>
-)
+          <div>
+              Time to read: {mdx.timeToRead} minutes
+          </div>
+          {mdx.frontmatter.tags && (
+            <ul className="tags unstyledList">
+              {mdx.frontmatter.tags.map((tag, i) => (
+                <li>
+                  #
+                  <Link
+                    to={`/tags/${tag}`}
+                    key={tag}
+                  >
+                    {tag}
+                  </Link>
+                  {(i < mdx.frontmatter.tags.length - 1) && (
+                    <>
+                      &#44;
+                      &nbsp;
+                    </>
+                  )}
+                </li>
+              ))}
+            </ul>
+          )}
+
+          {mdx.tableOfContents.items && (
+            <div className="toc">
+              {toc(mdx.tableOfContents.items)}
+            </div>
+          )}
+        </aside>
+      </section>
+    </Layout>
+  )
+}
 
 export const pageQuery = graphql`
   query BlogPostQuery($id: String) {

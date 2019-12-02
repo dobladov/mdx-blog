@@ -1,22 +1,34 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
 import { css } from '@emotion/core'
+
+import SEO from "../components/seo"
 import Layout from '../components/layout'
 import Tags from '../components/Tags'
 
 const formatter = new Intl.DateTimeFormat('en', { month: 'short' })
 
 const style = css`
-  display: grid;
-  grid-template-areas: "content side";
-  grid-template-columns: 2fr 1fr;
-  grid-gap: 20px;
+  ul {
+    max-width: 1000px;
+    grid-area: content;
+  }
+
+  h1 {
+    font-size: 3.7em;
+    font-weight: 200;
+    margin-top: 0;
+    font-family: 'Text Me One', sans-serif;
+    grid-area: title;
+  }
+
+  aslide {
+    grid-area: side;
+  }
 
   > ul {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-
+    padding-left: 40px;
+    
     li:first-child h2 {
       margin-top: 0;
     }
@@ -45,8 +57,10 @@ const IndexPage = ({
 
   return (
     <Layout>
-      <section css={style}>
-        <ul>
+      <SEO title="Recent Blog Posts" description="All blog posts" />
+      <section css={style} className="double">
+        <h1 className="title">Recent Blog Posts</h1>
+        <ul className="content unstyledList">
           {Object.entries(organizedPosts).map(([year, yearPosts]) => (
             <li key={year}>
               <h2>{year}</h2>

@@ -2,9 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import { css } from '@emotion/core'
+import { Twitter, GitHub, Rss } from 'react-feather'
 
 const style = css`
-  padding: 20px;
+  padding: 20px 40px;
   display: flex;
   font-family: 'Text Me One',sans-serif;
 
@@ -19,8 +20,15 @@ const style = css`
     ul {
       list-style-type: none;
       display: flex;
+      font-size: 1.2rem;
+
+      svg {
+        top: 6px;
+        position: relative;
+      }
 
       a {
+        font-weight: bold;
         padding: 10px;
       }
     }
@@ -44,6 +52,21 @@ const Header = ({ siteTitle }) => (
       <ul>
         <li>
           <Link to="/blog">Blog</Link>
+        </li>
+        <li>
+          <a target="_blank" href="https://twitter.com/dobladev">
+            <Twitter />
+          </a>
+        </li>
+        <li>
+          <a target="_blank" href="https://github.com/dobladov">
+            <GitHub />
+          </a>
+        </li>
+        <li>
+          <Link to="/feed.xml">
+            <Rss />
+          </Link>
         </li>
       </ul>
     </nav>

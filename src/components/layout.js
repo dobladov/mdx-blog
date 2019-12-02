@@ -15,27 +15,114 @@ import Header from './header'
 import 'normalize.css'
 
 const globalSyles = css`
+  :root {
+    --main-bg: hsl(0, 0%, 13%);
+    --contrast: hsl(154, 44%, 49%);
+    --text: hsl(0, 0%, 100%);
+    --action: hsl(5, 83%, 64%);
+  }
+
+  ::selection {
+    background-color: var(--action);
+    color: white;
+  }
+
+  html {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
   body {
-    background-color: hsl(0, 0%, 13%);
-    color: hsl(0, 0%, 100%);
+    background-color: var(--main-bg);
+    color: var(--text);
     font-size: calc(14px + 0.25vw);
-    line-height: 1.65;
-    font-family: futura-pt,sans-serif,sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    line-height: 1.6;
+    font-weight: 300;
+
+    .light {
+      --main-bg: hsl(0, 0%, 100%);
+    }
   }
 
   a {
-    color: hsl(0, 0%, 100%);
     text-decoration: none;
+    font-weight: 400;
+    color: var(--contrast);
 
     &:hover {
       text-decoration: underline;
+      color: var(--action);
+    }
+  }
+
+  .unstyledList {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  blockquote {
+    position: relative;
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 3px;
+      height: 100%;
+      background-color: var(--contrast);
+      left: -15px;
+      top: 0;
+    }
+  }
+
+  .title {
+    font-size: 3.7em;
+    font-weight: 200;
+    margin-top: 0;
+    font-family: 'Text Me One', sans-serif;
+    grid-area: title;
+    margin: 0;
+  }
+
+  .double {
+    display: grid;
+    grid-template-areas: "title title"
+                          "article side";
+    grid-template-columns: 2fr 1fr;
+    grid-row-gap: 20px;
+    grid-column-gap: 60px;
+
+    .content {
+      max-width: 1000px;
+      grid-area: article;
+    }
+
+    aside {
+      grid-area: side;
+    }
+  }
+
+  @media (max-width: 900px) {
+    .double {
+      display: block;
+
     }
   }
 `
 
 const style = css`
   main {
-    padding: 40px 80px;
+    padding: 10px 40px;
+  }
+
+  @media (min-width: 900px) {
+    main {
+      padding: 40px 80px;
+    }
   }
 `
 
@@ -57,7 +144,9 @@ const Layout = ({ children }) => {
       <div
         css={style}
       >
-        <main>{children}</main>
+        <main>
+          {children}
+        </main>
 
         <Helmet>
           <link href="https://fonts.googleapis.com/css?family=Text+Me+One&display=swap" rel="stylesheet"/>

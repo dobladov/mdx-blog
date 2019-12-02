@@ -3,19 +3,26 @@ import { Link } from 'gatsby'
 import { css } from '@emotion/core'
 
 const style = css`
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+    li {
+      display: inline-block;
+    }
 `
 
-const Tags = ({ tags }) => {
+const Tags = ({ tags, className }) => {
   return (
-    <ul css={style}>
-      {tags.sort((a, b) => a.totalCount < b.totalCount).map(({ tag, totalCount }) => (
+    <ul css={style} className={`unstyledList${className ? ` ${className}` : ''}`}>
+      {tags.sort((a, b) => a.totalCount < b.totalCount).map(({ tag, totalCount }, i) => (
         <li key={tag}>
+          #
           <Link to={`/tags/${tag}`}>
-            #{tag} ({totalCount})
+            {tag} ({totalCount})
           </Link>
+          {(i < tags.length - 1) && (
+            <>
+              &#44;
+              &nbsp;
+            </>
+          )}
         </li>
       ))}
     </ul>
