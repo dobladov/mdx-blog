@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import { css } from '@emotion/core'
@@ -50,7 +50,10 @@ const style = css`
 `
 
 const Header = ({ siteTitle }) => {
-  const [darkMode, setDarkMode] = useState(JSON.parse(localStorage.getItem('darkMode')))
+  const [darkMode, setDarkMode] = useState(true)
+  useEffect(() => {
+    setDarkMode(JSON.parse(localStorage.getItem('darkMode') || true))
+  }, [])
 
   return (
     <header css={style}>
