@@ -1,8 +1,9 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { graphql, Link } from 'gatsby'
 import { css } from '@emotion/core'
 
-import SEO from "../components/seo"
+import SEO from '../components/seo'
 import Layout from '../components/layout'
 import Tags from '../components/Tags'
 
@@ -35,7 +36,7 @@ const style = css`
   }
 `
 
-const IndexPage = ({
+const blog = ({
   data: {
     allMdx: { edges },
     tags: { group: tags }
@@ -89,7 +90,7 @@ const IndexPage = ({
     </Layout>
   )
 }
-export default IndexPage
+export default blog
 export const pageQuery = graphql`
   query {
     allMdx(sort: {order: DESC, fields: [frontmatter___title]}) {
@@ -120,3 +121,7 @@ export const pageQuery = graphql`
     }
   }
 `
+
+blog.propTypes = {
+  data: PropTypes.objectOf(PropTypes.any).isRequired
+}

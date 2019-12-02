@@ -1,11 +1,12 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+
 import { graphql, Link } from 'gatsby'
 import { css } from '@emotion/core'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 import Layout from './layout'
 import SEO from '../components/seo'
-
 
 const formatter = new Intl.DateTimeFormat('en', { month: 'long' })
 
@@ -63,11 +64,10 @@ const PostLayout = ({ data: { mdx } }) => {
           {mdx.frontmatter.tags && (
             <ul className="tags unstyledList">
               {mdx.frontmatter.tags.map((tag, i) => (
-                <li>
+                <li key={tag}>
                   #
                   <Link
                     to={`/tags/${tag}`}
-                    key={tag}
                   >
                     {tag}
                   </Link>
@@ -112,5 +112,9 @@ export const pageQuery = graphql`
     }
   }
 `
+
+PostLayout.propTypes = {
+  data: PropTypes.objectOf(PropTypes.any).isRequired
+}
 
 export default PostLayout

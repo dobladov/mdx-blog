@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 
 import SEO from '../components/seo'
@@ -28,6 +29,10 @@ const tag = ({ pageContext: { tag, nodes } }) => {
       </section>
     </Layout>
   )
+}
+
+tag.propTypes = {
+  pageContext: PropTypes.objectOf(PropTypes.any).isRequired
 }
 
 export default tag

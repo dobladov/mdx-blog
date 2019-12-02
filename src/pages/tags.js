@@ -1,11 +1,12 @@
 import React from 'react'
-import { graphql, Link } from 'gatsby'
+import PropTypes from 'prop-types'
+import { graphql } from 'gatsby'
 
 import SEO from '../components/seo'
 import Layout from '../components/layout'
 import Tags from '../components/Tags'
 
-const IndexPage = ({
+const tags = ({
   data: {
     allMdx: { group }
   }
@@ -20,14 +21,19 @@ const IndexPage = ({
     </Layout>
   )
 }
-export default IndexPage
 export const pageQuery = graphql`
-  query {
-    allMdx {
-      group(field: frontmatter___tags) {
+query {
+  allMdx {
+    group(field: frontmatter___tags) {
         tag: fieldValue
         totalCount
       }
     }
   }
 `
+
+tags.propTypes = {
+  data: PropTypes.objectOf(PropTypes.any).isRequired
+}
+
+export default tags

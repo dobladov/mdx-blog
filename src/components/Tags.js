@@ -1,4 +1,6 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+
 import { Link } from 'gatsby'
 import { css } from '@emotion/core'
 
@@ -27,6 +29,15 @@ const Tags = ({ tags, className }) => {
       ))}
     </ul>
   )
+}
+
+Tags.propTypes = {
+  tags: PropTypes.arrayOf(PropTypes.any).isRequired,
+  className: PropTypes.string
+}
+
+Tags.defaultProps = {
+  className: undefined
 }
 
 export default Tags

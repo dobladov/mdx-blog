@@ -54,12 +54,12 @@ const Header = ({ siteTitle }) => (
           <Link to="/blog">Blog</Link>
         </li>
         <li>
-          <a target="_blank" href="https://twitter.com/dobladev">
+          <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/dobladev">
             <Twitter />
           </a>
         </li>
         <li>
-          <a target="_blank" href="https://github.com/dobladov">
+          <a target="_blank" rel="noopener noreferrer" href="https://github.com/dobladov">
             <GitHub />
           </a>
         </li>
