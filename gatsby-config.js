@@ -22,13 +22,13 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'gatsby-starter-default',
-        short_name: 'starter',
+        name: 'Daniel Doblado',
+        short_name: 'DobladoV',
         start_url: '/',
-        background_color: '#663399',
-        theme_color: '#663399',
+        background_color: 'hsl(0, 0%, 95%)',
+        theme_color: 'hsl(180, 3%, 23%)',
         display: 'minimal-ui',
-        icon: 'src/images/gatsby-icon.png' // This path is relative to the root of the site.
+        icon: 'src/images/logo256.png' // This path is relative to the root of the site.
       }
     },
     'gatsby-plugin-emotion',
