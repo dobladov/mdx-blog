@@ -96,7 +96,7 @@ const globalSyles = css`
     display: grid;
     grid-template-areas: "title title"
                           "article side";
-    grid-template-columns: 2.5fr 1fr;
+    grid-template-columns: minmax(200px, 2.5fr) minmax(auto, 1fr);
     grid-row-gap: 20px;
     grid-column-gap: 60px;
 

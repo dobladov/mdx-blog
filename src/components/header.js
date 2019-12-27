@@ -53,7 +53,7 @@ const style = css`
     }
   }
 
-  @media (min-width: 576px) {
+  @media (min-width: 900px) {
     display: flex;
 
     .mainNav ul li:first-child a {
