@@ -4,7 +4,7 @@ const highlight = require('remark-highlight.js')
 
 module.exports = {
   siteMetadata: {
-    title: 'Daniel Doblado',
+    title: 'Odyssey Codes',
     description: 'I&apos;m a Front-end Developer currently based in Berlin 🇩🇪, with true passion for open-source and building better platforms.',
     author: '@dobladev'
   },

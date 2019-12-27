@@ -161,7 +161,7 @@ const Layout = ({ children }) => {
         </main>
 
         <Helmet>
-          <link href="https://fonts.googleapis.com/css?family=Text+Me+One&display=swap" rel="stylesheet"/>
+          <link href="https://fonts.googleapis.com/css?family=Text+Me+One&display=swap" rel="stylesheet" />
         </Helmet>
 
       </div>

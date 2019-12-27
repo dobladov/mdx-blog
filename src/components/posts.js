@@ -23,7 +23,7 @@ const style = css`
   
   .toc ul {
     padding-left: 20px;
-  } 
+  }
 `
 
 const toc = (items) => (
@@ -55,7 +55,7 @@ const PostLayout = ({ data: { mdx } }) => {
             {`${date.getDate()} ${formatter.format(date)} ${date.getFullYear()}`}
           </div>
           <div>
-              Time to read: {mdx.timeToRead} minutes
+            Time to read: {mdx.timeToRead} minutes
           </div>
           {mdx.frontmatter.tags && (
             <ul className="tags unstyledList">
