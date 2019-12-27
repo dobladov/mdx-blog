@@ -43,8 +43,8 @@ const globalSyles = css`
     font-weight: 300;
     
     &.light {
-      --main-bg: hsl(0, 0%, 95%);
-      --text: hsl(180, 3%, 39%);
+      --main-bg: hsl(210, 30%, 96%);
+      --text: hsl(0, 0%, 20%);
       --contrast: hsl(180, 3%, 23%);
     }
   }
@@ -68,6 +68,8 @@ const globalSyles = css`
 
   blockquote {
     position: relative;
+    font-style: italic;
+    font-size: 1.6rem;
 
     &::before {
       content: "";

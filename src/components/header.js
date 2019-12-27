@@ -6,8 +6,8 @@ import { Twitter, GitHub, Rss, Sun, Moon, Codepen, Mail } from 'react-feather'
 
 const style = css`
   padding: 20px 40px;
-  display: flex;
   font-family: 'Text Me One', sans-serif;
+  align-items: center;
 
   h1 {
     flex: 1;
@@ -25,6 +25,7 @@ const style = css`
       list-style-type: none;
       display: flex;
       font-size: 1.2rem;
+      padding: 0;
       
       svg {
         top: 6px;
@@ -45,6 +46,18 @@ const style = css`
         font-weight: bold;
         padding: 10px;
       }
+
+      li:first-child a {
+        padding-left: 0;
+      }
+    }
+  }
+
+  @media (min-width: 576px) {
+    display: flex;
+
+    .mainNav ul li:first-child a {
+      padding-left: 10px;
     }
   }
 `
