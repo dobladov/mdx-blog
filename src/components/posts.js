@@ -24,6 +24,31 @@ const style = css`
   .toc ul {
     padding-left: 20px;
   }
+
+  .contains-task-list {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  table {
+    border-spacing: 0;
+    border-collapse: collapse;
+    text-align: left;
+
+    th,
+    td {
+      padding: 6px;
+      border-bottom: .05rem solid var(--text);
+    }
+
+    th {
+      border-bottom: .05rem solid var(--text);
+    }
+  }
+
+  p {
+    text-align: justify;
+  }
 `
 
 const toc = (items) => (
@@ -101,6 +126,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         tags
+        hook
       }
       excerpt
       tableOfContents

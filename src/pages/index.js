@@ -17,7 +17,7 @@ const style = css`
   }
 
   .important {
-    color: #8e62b7;
+    color: tomato;
     font-size: calc(30px + 0.25vw);
   }
 `
@@ -34,7 +34,7 @@ const IndexPage = () => (
       <p>My name is <b>Daniel Doblado</b>, originally from Spain, I&apos;m a Front-end Developer currently based in <b>Berlin 🇩🇪</b>, with true passion for Open-source and building better platforms.</p>
       <p>From time to time I <a target="_blank" rel="noopener noreferrer" href="https://github.com/dobladov/">develop</a> some <Link to="/projects">projects</Link> or <Link to="/blog">write</Link> about them.</p>
 
-      <p className="important">I&apos;m currently open for a new full-time position in Berlin or remote.</p>
+      <p className="important">I&apos;m looking for a new full-time position in Berlin or remote.</p>
 
       <p>Say Hi! <a href="mailto:danieldoblado@gmail.com">danieldoblado@gmail.com</a> </p>
     </section>
