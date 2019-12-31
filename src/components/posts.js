@@ -1,12 +1,13 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 
 import { graphql, Link } from 'gatsby'
 import { css } from '@emotion/core'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
-import { Calendar, Clock, Tag } from "react-feather"
+import { Calendar, Clock, Tag } from 'react-feather'
 import Layout from './layout'
 import SEO from '../components/seo'
+import ScrollUp from '../components/ScrollUp'
 
 const formatter = new Intl.DateTimeFormat('en', { month: 'long' })
 
@@ -102,25 +103,25 @@ const PostLayout = ({ data: { mdx } }) => {
           </div>
           {mdx.frontmatter.tags && (
             <div className="tagsContainer">
-            <Tag aria-hidden="true" className="icon" />
-            <ul className="tags unstyledList">
-              {mdx.frontmatter.tags.map((tag, i) => (
-                <li key={tag}>
-                  <span aria-hidden="true">#</span>
-                  <Link
-                    to={`/tags/${tag}`}
-                  >
-                    {tag}
-                  </Link>
-                  {(i < mdx.frontmatter.tags.length - 1) && (
-                    <>
-                      &#44;
-                      &nbsp;
-                    </>
-                  )}
-                </li>
-              ))}
-            </ul>
+              <Tag aria-hidden="true" className="icon" />
+              <ul className="tags unstyledList">
+                {mdx.frontmatter.tags.map((tag, i) => (
+                  <li key={tag}>
+                    <span aria-hidden="true">#</span>
+                    <Link
+                      to={`/tags/${tag}`}
+                    >
+                      {tag}
+                    </Link>
+                    {(i < mdx.frontmatter.tags.length - 1) && (
+                      <>
+                        &#44;
+                        &nbsp;
+                      </>
+                    )}
+                  </li>
+                ))}
+              </ul>
             </div>
           )}
 
@@ -131,6 +132,7 @@ const PostLayout = ({ data: { mdx } }) => {
           )}
         </aside>
       </section>
+      <ScrollUp />
     </Layout>
   )
 }
