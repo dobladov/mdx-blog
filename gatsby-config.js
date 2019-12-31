@@ -5,8 +5,9 @@ const highlight = require('remark-highlight.js')
 module.exports = {
   siteMetadata: {
     title: 'Odyssey Codes',
-    description: 'I&apos;m a Front-end Developer currently based in Berlin 🇩🇪, with true passion for open-source and building better platforms.',
-    author: '@dobladev'
+    description: 'I\'m a Front-end Developer currently based in Berlin 🇩🇪, with true passion for open-source and building better platforms.',
+    author: '@dobladev',
+    url: 'https://odyssey.codes'
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -71,6 +72,61 @@ module.exports = {
             policy: [{ userAgent: '*', allow: '/' }]
           }
         }
+      }
+    },
+    {
+      resolve: `gatsby-plugin-feed-mdx`,
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                title
+                description
+                url
+              }
+            }
+          }
+        `,
+        feeds: [
+          {
+            serialize: ({ query: { site, allMdx } }) => {
+              return allMdx.edges.map(edge => {
+                return Object.assign({}, edge.node.frontmatter, {
+                  description: edge.node.excerpt,
+                  date: edge.node.frontmatter.date,
+                  url: site.siteMetadata.url + edge.node.fields.slug,
+                  guid: site.siteMetadata.url + edge.node.fields.slug,
+                  custom_elements: [{ "content:encoded": edge.node.html }]
+                });
+              });
+            },
+            query: `
+              {
+                allMdx(
+                  sort: { order: DESC, fields: [frontmatter___date] },
+                ) {
+                  edges {
+                    node {
+                      excerpt
+                      html
+                      fields {
+                        slug
+                      }
+                      frontmatter {
+                        title
+                        date
+                      }
+                    }
+                  }
+                }
+              }
+            `,
+            output: "/rss.xml",
+            title: "Odyssey codes RSS",
+            match: "^/blog/"
+          }
+        ]
       }
     }
     // this (optional) plugin enables Progressive Web App + Offline functionality

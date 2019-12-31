@@ -107,7 +107,7 @@ const Header = ({ siteTitle }) => {
             </a>
           </li>
           <li>
-            <Link to="/feed.xml">
+            <Link to="/rss.xml">
               <Rss />
             </Link>
           </li>
