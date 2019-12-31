@@ -4,6 +4,8 @@ import { Link } from 'gatsby'
 import { css } from '@emotion/core'
 import { Twitter, GitHub, Rss, Sun, Moon, Codepen, Mail, Key } from 'react-feather'
 
+import ObservableHQLogo from '../images/observableHQ.svg'
+
 const style = css`
   padding: 20px 40px;
   font-family: 'Text Me One', sans-serif;
@@ -99,6 +101,11 @@ const Header = ({ siteTitle }) => {
           <li>
             <a target="_blank" rel="noopener noreferrer" href="https://codepen.io/dobladov">
               <Codepen />
+            </a>
+          </li>
+          <li>
+            <a target="_blank" rel="noopener noreferrer" href="https://observablehq.com/@dobladov">
+              <ObservableHQLogo />
             </a>
           </li>
           <li>
