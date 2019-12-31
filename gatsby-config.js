@@ -2,12 +2,15 @@ const slug = require('remark-slug')
 const emoji = require('remark-emoji')
 const highlight = require('remark-highlight.js')
 
+const baseURL = 'https://odyssey.codes'
+const title = 'Odyssey Codes'
+
 module.exports = {
   siteMetadata: {
-    title: 'Odyssey Codes',
+    title,
     description: 'I\'m a Front-end Developer currently based in Berlin 🇩🇪, with true passion for open-source and building better platforms.',
     author: '@dobladev',
-    url: 'https://odyssey.codes'
+    url: 'baseURL'
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -62,20 +65,20 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
-        host: 'https://www.example.com',
-        sitemap: 'https://www.example.com/sitemap.xml',
+        host: baseURL,
+        sitemap: `${baseURL}/sitemap.xml`,
         env: {
           development: {
             policy: [{ userAgent: '*', disallow: ['/'] }]
           },
           production: {
-            policy: [{ userAgent: '*', allow: '/' }]
+            policy: [{ userAgent: 'ia_archiver', disallow: '/' }]
           }
         }
       }
     },
     {
-      resolve: `gatsby-plugin-feed-mdx`,
+      resolve: 'gatsby-plugin-feed-mdx',
       options: {
         query: `
           {
@@ -97,9 +100,9 @@ module.exports = {
                   date: edge.node.frontmatter.date,
                   url: site.siteMetadata.url + edge.node.fields.slug,
                   guid: site.siteMetadata.url + edge.node.fields.slug,
-                  custom_elements: [{ "content:encoded": edge.node.html }]
-                });
-              });
+                  custom_elements: [{ 'content:encoded': edge.node.html }]
+                })
+              })
             },
             query: `
               {
@@ -122,9 +125,9 @@ module.exports = {
                 }
               }
             `,
-            output: "/rss.xml",
-            title: "Odyssey codes RSS",
-            match: "^/blog/"
+            output: '/rss.xml',
+            title: `${title} RSS`,
+            match: '^/blog/'
           }
         ]
       }
