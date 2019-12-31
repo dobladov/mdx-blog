@@ -48,6 +48,11 @@ const style = css`
       margin-top: 0;
     }
   }
+  
+  .hook {
+    margin-top: 0;
+    font-size: 1.1rem;
+  }
 `
 
 const blog = ({
@@ -80,7 +85,7 @@ const blog = ({
             <li key={year}>
               <h2>{year}</h2>
               <ul>
-                {yearPosts.map(({ id, fields: { slug, date }, frontmatter: { title } }) => (
+                {yearPosts.map(({ id, fields: { slug, date }, frontmatter: { title, hook } }) => (
                   <li key={id}>
                     <time dateTime={date.toISOString()}>
                       {`${formatter.format(date)} ${date.getDate()}`}
@@ -90,6 +95,9 @@ const blog = ({
                       <Link to={slug}>
                         {title}
                       </Link>
+                      {hook && (
+                        <p className="hook">{hook}</p>
+                      )}
                     </span>
                   </li>
                 ))}
@@ -119,6 +127,7 @@ export const pageQuery = graphql`
           frontmatter {
             title
             date
+            hook
           }
           fields {
             slug

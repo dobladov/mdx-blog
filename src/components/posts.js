@@ -66,6 +66,15 @@ const style = css`
       margin-right: 10px;
     }
   }
+
+  .hook {
+    margin-top: 0;
+    font-weight: 400;
+    text-align: left;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    margin-bottom: 60px;
+  }
 `
 
 const toc = (items) => (
@@ -90,6 +99,9 @@ const PostLayout = ({ data: { mdx } }) => {
       <section css={style} className="double">
         <h1 className="title">{mdx.frontmatter.title}</h1>
         <article className="content">
+          {mdx.frontmatter.hook && (
+            <p className="hook">{mdx.frontmatter.hook}</p>
+          )}
           <MDXRenderer>{mdx.body}</MDXRenderer>
         </article>
         <aside>
