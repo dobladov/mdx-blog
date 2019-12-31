@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import { css } from '@emotion/core'
-import { Twitter, GitHub, Rss, Sun, Moon, Codepen, Mail } from 'react-feather'
+import { Twitter, GitHub, Rss, Sun, Moon, Codepen, Mail, Key } from 'react-feather'
 
 const style = css`
   padding: 20px 40px;
@@ -104,6 +104,11 @@ const Header = ({ siteTitle }) => {
           <li>
             <a href="mailto:danieldoblado@gmail.com">
               <Mail />
+            </a>
+          </li>
+          <li>
+            <a href="//gpg.odyssey.codes">
+              <Key />
             </a>
           </li>
           <li>
