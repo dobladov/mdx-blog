@@ -19,7 +19,7 @@ const tag = ({ pageContext: { tag, nodes } }) => {
             height="50"
             aria-hidden="true"
           />
-          Posts with tag #{tag}
+          Posts with tag #{tag} ({nodes.length})
         </h1>
         <ul className="content">
           {nodes.map(node => (

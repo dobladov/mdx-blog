@@ -22,7 +22,7 @@ const tags = ({
             height="50"
             aria-hidden="true"
           />
-          Blog tags
+          Blog tags ({group.length})
         </h1>
         <Tags className="content" tags={group} />
       </section>
