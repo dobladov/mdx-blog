@@ -50,9 +50,11 @@ const globalSyles = css`
   }
 
   a {
-    text-decoration: none;
     font-weight: 400;
     color: var(--contrast);
+    text-decoration-color: #46b4845c;
+    text-decoration-style: dotted;
+    text-decoration-thickness: 1px;
 
     &:hover {
       text-decoration: underline;
@@ -90,6 +92,12 @@ const globalSyles = css`
     font-family: 'Text Me One', sans-serif;
     grid-area: title;
     margin: 0;
+    display: flex;
+    align-items: center;
+
+    svg {
+      margin-right: 20px;
+    }
   }
 
   .double {
