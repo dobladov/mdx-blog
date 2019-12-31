@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql, Link } from 'gatsby'
 import { css } from '@emotion/core'
+import { Tag } from 'react-feather'
 
 import SEO from '../components/seo'
 import Layout from '../components/layout'
@@ -23,8 +24,21 @@ const style = css`
     grid-area: title;
   }
 
-  aslide {
+  aside {
     grid-area: side;
+
+    .tagsContainer {
+      display: flex;
+      align-items: flex-start;
+
+      svg {
+        position: relative;
+        top: 5px;
+        min-width: 24px;
+        margin-right: 10px;
+      }
+    }
+
   }
 
   > ul {
@@ -84,7 +98,12 @@ const blog = ({
           ))}
         </ul>
         <aside>
-          <Tags tags={tags} />
+          <div className="tagsContainer" >
+            <Tag
+              aria-hidden="true"
+            />
+            <Tags tags={tags} />
+          </div>
         </aside>
       </section>
     </Layout>

@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
+import { Tag } from "react-feather"
 
 import SEO from '../components/seo'
 import Layout from '../components/layout'
@@ -15,7 +16,14 @@ const tags = ({
     <Layout>
       <SEO title="Blog tags" description="All tags" />
       <section className="double">
-        <h1 className="title">Blog tags</h1>
+        <h1 className="title">
+          <Tag
+            width="50"
+            height="50"
+            aria-hidden="true"
+          />
+          Blog tags
+        </h1>
         <Tags className="content" tags={group} />
       </section>
     </Layout>

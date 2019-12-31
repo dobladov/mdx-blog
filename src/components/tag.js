@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
+import { Tag } from 'react-feather'
 
 import SEO from '../components/seo'
 import Layout from './layout'
@@ -12,7 +13,14 @@ const tag = ({ pageContext: { tag, nodes } }) => {
     <Layout>
       <SEO title={`Posts with label #${tag}`} description={`All blog posts tagged #${tag}`} />
       <section className="double">
-        <h1 className="title">Posts with tag #{tag}</h1>
+        <h1 className="title">
+          <Tag
+            width="50"
+            height="50"
+            aria-hidden="true"
+          />
+          Posts with tag #{tag}
+        </h1>
         <ul className="content">
           {nodes.map(node => (
             <li key={node.id}>
