@@ -2,7 +2,7 @@ const slug = require('remark-slug')
 const emoji = require('remark-emoji')
 const highlight = require('remark-highlight.js')
 
-const baseURL = 'https://odyssey.codes'
+const siteUrl = 'https://odyssey.codes'
 const title = 'Odyssey Codes'
 
 module.exports = {
@@ -10,7 +10,7 @@ module.exports = {
     title,
     description: 'I\'m a Front-end Developer currently based in Berlin 🇩🇪, with true passion for open-source and building better platforms.',
     author: '@dobladev',
-    url: 'baseURL'
+    siteUrl
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -73,8 +73,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
-        host: baseURL,
-        sitemap: `${baseURL}/sitemap.xml`,
+        host: siteUrl,
+        sitemap: `${siteUrl}/sitemap.xml`,
         env: {
           development: {
             policy: [{ userAgent: '*', disallow: ['/'] }]
@@ -94,7 +94,7 @@ module.exports = {
               siteMetadata {
                 title
                 description
-                url
+                siteUrl
               }
             }
           }
@@ -106,8 +106,8 @@ module.exports = {
                 return Object.assign({}, edge.node.frontmatter, {
                   description: edge.node.excerpt,
                   date: edge.node.frontmatter.date,
-                  url: site.siteMetadata.url + edge.node.fields.slug,
-                  guid: site.siteMetadata.url + edge.node.fields.slug,
+                  url: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                  guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
                   custom_elements: [{ 'content:encoded': edge.node.html }]
                 })
               })
@@ -139,7 +139,8 @@ module.exports = {
           }
         ]
       }
-    }
+    },
+    'gatsby-plugin-sitemap'
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
