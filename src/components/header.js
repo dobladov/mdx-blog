@@ -123,7 +123,7 @@ const Header = ({ siteTitle }) => {
               <Rss />
             </Link>
           </li>
-          <li>
+          <li className="noScript">
             <button
               aria-label="Toggle dark theme"
               className="darkModeBtn"

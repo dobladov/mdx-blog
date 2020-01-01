@@ -165,6 +165,15 @@ const Layout = ({ children }) => {
       <div
         css={style}
       >
+        <noscript>
+          <style>
+            {`
+              .noScript {
+                display: none;
+              }
+            `}
+          </style>
+        </noscript>
         <main>
           {children}
         </main>
