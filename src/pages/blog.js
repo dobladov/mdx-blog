@@ -8,12 +8,14 @@ import SEO from '../components/seo'
 import Layout from '../components/layout'
 import Tags from '../components/Tags'
 
-const formatter = new Intl.DateTimeFormat('en', { month: 'short' })
+const formatter = new Intl.DateTimeFormat('en', { month: 'long' })
 
 const style = css`
   ul {
     max-width: 1000px;
     grid-area: content;
+    list-style-type: none;
+    padding-left: 10px;
   }
 
   h1 {
@@ -46,6 +48,10 @@ const style = css`
     
     li:first-child h2 {
       margin-top: 0;
+    }
+
+    time {
+      color: var(--subtle)
     }
   }
   
@@ -90,7 +96,8 @@ const blog = ({
                     <time dateTime={date.toISOString()}>
                       {`${formatter.format(date)} ${date.getDate()}`}
                     </time>
-                  &nbsp;
+                    &nbsp;
+                    <br />
                     <span>
                       <Link to={slug}>
                         {title}
