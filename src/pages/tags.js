@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
-import { Tag } from "react-feather"
+import { Tag } from 'react-feather'
 
 import SEO from '../components/seo'
 import Layout from '../components/layout'
