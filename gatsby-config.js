@@ -13,7 +13,20 @@ module.exports = {
     siteUrl
   },
   plugins: [
-    'gatsby-plugin-react-helmet',
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/content/blog`,
+        name: 'blog'
+      }
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/content/assets`,
+        name: 'assets'
+      }
+    },
     {
       resolve: 'gatsby-plugin-react-svg',
       options: {
@@ -23,10 +36,29 @@ module.exports = {
       }
     },
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: 'gatsby-plugin-mdx',
       options: {
-        name: 'images',
-        path: `${__dirname}/src/images`
+        extensions: ['.mdx', '.md'],
+        plugins: [
+          'gatsby-remark-images'
+        ],
+        gatsbyRemarkPlugins: [
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              maxWidth: 1000,
+              quality: 90,
+              withWebp: true
+            }
+          },
+          {
+            resolve: 'gatsby-remark-copy-linked-files'
+          },
+          {
+            resolve: 'gatsby-remark-smartypants'
+          }
+        ],
+        remarkPlugins: [highlight, slug, emoji]
       }
     },
     'gatsby-transformer-sharp',
@@ -49,27 +81,6 @@ module.exports = {
       }
     },
     'gatsby-plugin-emotion',
-    'gatsby-plugin-react-helmet',
-    {
-      resolve: 'gatsby-plugin-mdx',
-      options: {
-        remarkPlugins: [highlight, slug, emoji]
-      }
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'images',
-        path: `${__dirname}/src/images`
-      }
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'posts',
-        path: `${__dirname}/src/posts`
-      }
-    },
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
@@ -140,7 +151,8 @@ module.exports = {
         ]
       }
     },
-    'gatsby-plugin-sitemap'
+    'gatsby-plugin-sitemap',
+    'gatsby-plugin-react-helmet'
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
