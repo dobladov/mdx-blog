@@ -75,6 +75,11 @@ const style = css`
     line-height: 2rem;
     margin-bottom: 60px;
   }
+
+  .license {
+    margin-top: 40px;
+    font-size: .8rem;
+  }
 `
 
 const toc = (items) => (
@@ -103,6 +108,12 @@ const PostLayout = ({ data: { mdx } }) => {
             <p className="hook">{mdx.frontmatter.hook}</p>
           )}
           <MDXRenderer>{mdx.body}</MDXRenderer>
+
+          <div className="license">
+            <a href="https://creativecommons.org/licenses/by-sa/4.0/">
+              CC BY-SA 4.0
+            </a>
+          </div>
         </article>
         <aside>
           <div className="date">
