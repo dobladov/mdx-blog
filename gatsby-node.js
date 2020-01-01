@@ -62,18 +62,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       allMdx {
         group(field: frontmatter___tags) {
           tag: fieldValue
-        }
-      }
-    }
-  `)
-
-  tagsQuery.data.allMdx.group.forEach(async tagGroup => {
-    const { tag } = tagGroup
-
-    // For each tag create a page with the containing posts
-    const tagsQuery = await graphql(`
-      query {
-        allMdx(filter: {frontmatter: {tags: {eq: "${tag}"}}}) {
           totalCount
           nodes {
             id
@@ -87,12 +75,16 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           }
         }
       }
-    `)
+    }
+  `)
+
+  tagsQuery.data.allMdx.group.forEach(tagGroup => {
+    const { tag } = tagGroup
 
     createPage({
       path: `/tags/${tag}`,
       component: path.resolve('./src/components/tag.js'),
-      context: { tag, nodes: tagsQuery.data.allMdx.nodes }
+      context: tagGroup
     })
   })
 }
