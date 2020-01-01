@@ -20,6 +20,7 @@ const globalSyles = css`
     --contrast: hsl(154, 44%, 49%);
     --text: hsl(0, 0%, 100%);
     --action: hsl(5, 83%, 64%);
+    --subtle: hsl(0, 0%, 50%);
   }
 
   ::selection {
@@ -43,8 +44,8 @@ const globalSyles = css`
     font-weight: 300;
     
     &.light {
-      --main-bg: hsl(210, 30%, 96%);
-      --text: hsl(0, 0%, 20%);
+      --main-bg: hsl(0, 0%, 96%);
+      --text: hsl(0, 0%, 24%);
       --contrast: hsl(180, 3%, 23%);
     }
   }
