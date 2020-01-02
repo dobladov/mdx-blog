@@ -18,7 +18,8 @@ import 'normalize.css'
 
 const globalSyles = css`
   :root {
-    --main-bg: hsl(0, 0%, 13%);
+    --main-bg: hsl(0, 0%, 1%);
+    --main-bg-contrast: hsl(0, 0%, 6%);
     --contrast: hsl(154, 44%, 49%);
     --text: hsl(0, 0%, 100%);
     --important: hsl(5, 83%, 64%);
@@ -49,6 +50,7 @@ const globalSyles = css`
     
     &.light {
       --main-bg: hsl(0, 0%, 96%);
+      --main-bg-contrast: hsl(0, 0%, 94%);
       --text: hsl(0, 0%, 24%);
       --contrast: hsl(5, 83%, 64%);
       background-image: url(${backgroundLight});

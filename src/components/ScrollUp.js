@@ -6,6 +6,9 @@ const style = css`
   position: fixed;
   bottom: 20px;
   right: 20px;
+  background-color: var(--main-bg);
+  border-radius: 50%;
+  border: 1px solid var(--main-bg-contrast);
 `
 
 const ScrollUp = props => {
@@ -28,7 +31,11 @@ const ScrollUp = props => {
       title="Go Up"
       aria-hidden="true"
     >
-      <ChevronsUp css={style} />
+      <ChevronsUp
+        css={style}
+        width="60px"
+        height="60px"
+      />
     </a>
   ) : null
 }
