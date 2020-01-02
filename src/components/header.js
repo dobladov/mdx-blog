@@ -114,7 +114,7 @@ const Header = ({ siteTitle }) => {
             </a>
           </li>
           <li>
-            <a href="//gpg.odyssey.codes">
+            <a title="PGP public key" href="/public.pgp">
               <Key />
             </a>
           </li>
