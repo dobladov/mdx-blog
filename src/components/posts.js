@@ -110,7 +110,7 @@ const PostLayout = ({ data: { mdx } }) => {
           <MDXRenderer>{mdx.body}</MDXRenderer>
 
           <div className="license">
-            <a href="https://creativecommons.org/licenses/by-sa/4.0/">
+            <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">
               CC BY-SA 4.0
             </a>
           </div>
