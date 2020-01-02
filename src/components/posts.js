@@ -76,9 +76,11 @@ const style = css`
     margin-bottom: 60px;
   }
 
-  .license {
+  .extra {
     margin-top: 40px;
-    font-size: .8rem;
+    font-size: .9rem;
+    display: flex;
+    justify-content: space-between;
   }
 `
 
@@ -95,7 +97,12 @@ const toc = (items) => (
   </ul>
 )
 
-const PostLayout = ({ data: { mdx } }) => {
+const getFilePath = (fileAbsolutePath) => {
+  const start = fileAbsolutePath.indexOf('content')
+  return fileAbsolutePath.slice(start)
+}
+
+const PostLayout = ({ data: { site: { siteMetadata: { repositoryUrl }}, mdx } }) => {
   const date = new Date(mdx.fields.date)
 
   return (
@@ -109,11 +116,16 @@ const PostLayout = ({ data: { mdx } }) => {
           )}
           <MDXRenderer>{mdx.body}</MDXRenderer>
 
-          <div className="license">
+          <div className="extra">
             <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">
               CC BY-SA 4.0
             </a>
+            <span>
+              Did I make a mistake? Please consider <a href={`${repositoryUrl}${getFilePath(mdx.fileAbsolutePath)}`}> sending a pull request</a>.
+            </span>
           </div>
+
+
         </article>
         <aside>
           <div className="date">
@@ -162,9 +174,14 @@ const PostLayout = ({ data: { mdx } }) => {
 
 export const pageQuery = graphql`
   query BlogPostQuery($id: String) {
+    site {
+      siteMetadata {
+        repositoryUrl
+      }
+    }
     mdx(id: { eq: $id }) {
-      id
       body
+      fileAbsolutePath
       fields {
         slug
         date
