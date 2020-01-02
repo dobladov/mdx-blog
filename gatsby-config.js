@@ -32,7 +32,7 @@ module.exports = {
       resolve: 'gatsby-plugin-react-svg',
       options: {
         rule: {
-          include: /images/
+          include: /.svg$/
         }
       }
     },
@@ -78,7 +78,7 @@ module.exports = {
         background_color: 'hsl(0, 0%, 95%)',
         theme_color: 'hsl(180, 3%, 23%)',
         display: 'minimal-ui',
-        icon: 'src/images/logo256.png' // This path is relative to the root of the site.
+        icon: 'content/assets/logo256.png'
       }
     },
     'gatsby-plugin-emotion',

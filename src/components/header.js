@@ -4,7 +4,7 @@ import { Link } from 'gatsby'
 import { css } from '@emotion/core'
 import { Twitter, GitHub, Rss, Sun, Moon, Codepen, Mail, Key } from 'react-feather'
 
-import ObservableHQLogo from '../images/observableHQ.svg'
+import ObservableHQLogo from '../../content/assets/observableHQ.svg'
 
 const style = css`
   padding: 20px 40px;
@@ -28,6 +28,7 @@ const style = css`
       display: flex;
       font-size: 1.2rem;
       padding: 0;
+      align-items: center;
       
       svg {
         top: 6px;

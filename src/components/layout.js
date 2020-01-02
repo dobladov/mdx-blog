@@ -10,6 +10,8 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
 import { Global, css } from '@emotion/core'
+import backgroundDark from '../../content/assets/papyrus-dark.png'
+import backgroundLight from '../../content/assets/white-waves.png'
 
 import Header from './header'
 import 'normalize.css'
@@ -42,11 +44,14 @@ const globalSyles = css`
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
     line-height: 1.6;
     font-weight: 300;
+    background-image: url(${backgroundDark});
+    background-attachment: fixed;
     
     &.light {
       --main-bg: hsl(0, 0%, 96%);
       --text: hsl(0, 0%, 24%);
       --contrast: hsl(180, 3%, 23%);
+      background-image: url(${backgroundLight});
     }
   }
 
