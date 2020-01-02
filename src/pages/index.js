@@ -17,7 +17,7 @@ const style = css`
   }
 
   .important {
-    color: tomato;
+    color: var(--important);
     font-size: calc(30px + 0.25vw);
   }
 `

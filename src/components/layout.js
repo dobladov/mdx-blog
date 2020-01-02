@@ -21,12 +21,12 @@ const globalSyles = css`
     --main-bg: hsl(0, 0%, 13%);
     --contrast: hsl(154, 44%, 49%);
     --text: hsl(0, 0%, 100%);
-    --action: hsl(5, 83%, 64%);
+    --important: hsl(5, 83%, 64%);
     --subtle: hsl(0, 0%, 50%);
   }
 
   ::selection {
-    background-color: var(--action);
+    background-color: var(--contrast);
     color: white;
   }
 
@@ -50,21 +50,20 @@ const globalSyles = css`
     &.light {
       --main-bg: hsl(0, 0%, 96%);
       --text: hsl(0, 0%, 24%);
-      --contrast: hsl(180, 3%, 23%);
+      --contrast: hsl(5, 83%, 64%);
       background-image: url(${backgroundLight});
     }
   }
 
   a {
     font-weight: 400;
-    color: var(--contrast);
-    text-decoration-color: #46b4845c;
-    text-decoration-style: dotted;
-    text-decoration-thickness: 1px;
+    color: var(--text);
+    text-decoration-color: var(--contrast);
+    text-decoration-thickness: 4px;
+    text-decoration-skip-ink: none;
 
     &:hover {
-      text-decoration: underline;
-      color: var(--action);
+      color: var(--contrast);
     }
   }
 
@@ -122,6 +121,10 @@ const globalSyles = css`
 
     aside {
       grid-area: side;
+
+      a {
+        text-decoration: none;
+      }
     }
   }
 

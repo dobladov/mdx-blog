@@ -38,10 +38,10 @@ const style = css`
       .darkModeBtn {
         border: none;
         background-color: transparent;
-        color: var(--contrast);
+        color: var(--text);
 
         &:hover {
-          color: var(--action);
+          color: var(--contrast);
         }
       }
 
