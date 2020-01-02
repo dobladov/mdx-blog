@@ -8,6 +8,7 @@ import { Calendar, Clock, Tag } from 'react-feather'
 import Layout from './layout'
 import SEO from '../components/seo'
 import ScrollUp from '../components/ScrollUp'
+import Img from 'gatsby-image'
 
 const formatter = new Intl.DateTimeFormat('en', { month: 'long' })
 
@@ -102,8 +103,14 @@ const getFilePath = (fileAbsolutePath) => {
   return fileAbsolutePath.slice(start)
 }
 
-const PostLayout = ({ data: { site: { siteMetadata: { repositoryUrl }}, mdx } }) => {
+const PostLayout = ({ data: { site: { siteMetadata: { repositoryUrl } }, mdx } }) => {
   const date = new Date(mdx.fields.date)
+
+  const featuredImage = (mdx.frontmatter.featuredImage &&
+    mdx.frontmatter.featuredImage.childImageSharp &&
+    mdx.frontmatter.featuredImage.childImageSharp.fluid) || null
+
+  console.log(featuredImage)
 
   return (
     <Layout>
@@ -114,6 +121,11 @@ const PostLayout = ({ data: { site: { siteMetadata: { repositoryUrl }}, mdx } })
           {mdx.frontmatter.hook && (
             <p className="hook">{mdx.frontmatter.hook}</p>
           )}
+
+          {featuredImage && (
+            <Img fluid={featuredImage} />
+          )}
+
           <MDXRenderer>{mdx.body}</MDXRenderer>
 
           <div className="extra">
@@ -124,7 +136,6 @@ const PostLayout = ({ data: { site: { siteMetadata: { repositoryUrl }}, mdx } })
               Did I make a mistake? Please consider <a href={`${repositoryUrl}${getFilePath(mdx.fileAbsolutePath)}`}> sending a pull request</a>.
             </span>
           </div>
-
 
         </article>
         <aside>
@@ -190,6 +201,13 @@ export const pageQuery = graphql`
         title
         tags
         hook
+        featuredImage {
+          childImageSharp {
+            fluid(maxWidth: 1000, toFormat: WEBP, quality: 90) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
       excerpt
       tableOfContents

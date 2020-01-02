@@ -23,7 +23,7 @@ const globalSyles = css`
     --contrast: hsl(154, 44%, 49%);
     --text: hsl(0, 0%, 100%);
     --important: hsl(5, 83%, 64%);
-    --subtle: hsl(0, 0%, 50%);
+    --subtle: hsl(0, 0%, 40.8%);
   }
 
   ::selection {

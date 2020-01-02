@@ -2,7 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql, Link } from 'gatsby'
 import { css } from '@emotion/core'
-import { Tag } from 'react-feather'
+import { Tag, Calendar } from 'react-feather'
+import Img from 'gatsby-image'
 
 import SEO from '../components/seo'
 import Layout from '../components/layout'
@@ -15,7 +16,7 @@ const style = css`
     max-width: 1000px;
     grid-area: content;
     list-style-type: none;
-    padding-left: 10px;
+    padding: 0;
   }
 
   h1 {
@@ -24,6 +25,11 @@ const style = css`
     margin-top: 0;
     font-family: 'Text Me One', sans-serif;
     grid-area: title;
+  }
+
+  h3 {
+    margin: 0;
+    font-size: 1.8rem;
   }
 
   aside {
@@ -40,24 +46,55 @@ const style = css`
         margin-right: 10px;
       }
     }
-
   }
 
   > ul {
-    padding-left: 40px;
+    list-style-type: none;
+
+    .post {
+      .gatsby-image-wrapper {
+        margin-right: 40px;
+        border-radius: 2px;
+      }
+    }
     
     li:first-child h2 {
       margin-top: 0;
     }
 
-    time {
-      color: var(--subtle)
+    .time {
+      display: flex;
+      align-items: center;
+
+      time {
+        color: var(--subtle);
+        font-size: 1.6rem;
+      }
+
+      svg {
+        margin-right: 10px;
+      }
     }
   }
   
   .hook {
     margin-top: 0;
-    font-size: 1.1rem;
+    font-size: 1.4rem;
+  }
+
+  @media (min-width: 900px) {
+    > ul {
+      padding-left: 10px;
+    }
+
+    .post {
+      display: flex;
+      padding-left: 40px;
+
+      .gatsby-image-wrapper {
+        min-width: 200px;
+      }
+    }
   }
 `
 
@@ -91,21 +128,29 @@ const blog = ({
             <li key={year}>
               <h2>{year}</h2>
               <ul>
-                {yearPosts.map(({ id, fields: { slug, date }, frontmatter: { title, hook } }) => (
-                  <li key={id}>
-                    <time dateTime={date.toISOString()}>
-                      {`${formatter.format(date)} ${date.getDate()}`}
-                    </time>
-                    &nbsp;
-                    <br />
-                    <span>
-                      <Link to={slug}>
-                        {title}
-                      </Link>
-                      {hook && (
-                        <p className="hook">{hook}</p>
-                      )}
-                    </span>
+                {yearPosts.map(({ id, fields: { slug, date }, frontmatter: { title, hook, featuredImage } }) => (
+                  <li key={id} className="post">
+                    {featuredImage && (
+                      <Img fixed={featuredImage.childImageSharp.fixed} />
+                    )}
+                    <div>
+                      <div className="time">
+                        <Calendar />
+                        <time dateTime={date.toISOString()}>
+                          {`${formatter.format(date)} ${date.getDate()}`}
+                        </time>
+                      </div>
+                      <span>
+                        <Link to={slug}>
+                          <h3>
+                            {title}
+                          </h3>
+                        </Link>
+                        {hook && (
+                          <p className="hook">{hook}</p>
+                        )}
+                      </span>
+                    </div>
                   </li>
                 ))}
               </ul>
@@ -135,6 +180,13 @@ export const pageQuery = graphql`
             title
             date
             hook
+            featuredImage {
+              childImageSharp {
+                fixed(width: 350, toFormat: WEBP, quality: 90) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
+            }
           }
           fields {
             slug
