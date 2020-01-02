@@ -44,6 +44,14 @@ function SEO ({ description, lang, meta, title }) {
           content: title
         },
         {
+          property: 'author',
+          content: site.siteMetadata.author
+        },
+        {
+          property: 'generator',
+          content: 'Gatsby'
+        },
+        {
           property: 'og:description',
           content: metaDescription
         },

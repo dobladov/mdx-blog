@@ -9,7 +9,7 @@ module.exports = {
   siteMetadata: {
     title,
     description: 'I\'m a Front-end Developer currently based in Berlin 🇩🇪, with true passion for open-source and building better platforms.',
-    author: '@dobladev',
+    author: '@odysseycodes',
     siteUrl,
     repositoryUrl: 'https://github.com/dobladov/mdx-blog/edit/master/'
   },
