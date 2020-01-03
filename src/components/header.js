@@ -26,6 +26,7 @@ const style = css`
     ul {
       list-style-type: none;
       display: flex;
+      flex-wrap: wrap;
       font-size: 1.2rem;
       padding: 0;
       align-items: center;
@@ -50,6 +51,10 @@ const style = css`
         padding: 10px;
       }
 
+      li {
+        margin-bottom: 10px;
+      }
+
       li:first-child a {
         padding-left: 0;
       }
@@ -59,8 +64,12 @@ const style = css`
   @media (min-width: 900px) {
     display: flex;
 
-    .mainNav ul li:first-child a {
+    .mainNav ul {
+      
+
+      li:first-child a {
       padding-left: 10px;
+      }
     }
   }
 `
@@ -87,7 +96,10 @@ const Header = ({ siteTitle }) => {
       <nav className="mainNav">
         <ul role="navigation">
           <li>
-            <Link to="/blog">Blog</Link>
+            <Link to="/blog">Articles</Link>
+          </li>
+          <li>
+            <Link to="/projects">Projects</Link>
           </li>
           <li>
             <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/dobladev">

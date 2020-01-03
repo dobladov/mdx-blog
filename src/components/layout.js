@@ -94,7 +94,8 @@ const globalSyles = css`
   }
 
   .title {
-    font-size: 3.7em;
+    font-size: 5em;
+    line-height: 5.3rem;
     font-weight: 200;
     margin-top: 0;
     font-family: 'Text Me One', sans-serif;
@@ -102,6 +103,7 @@ const globalSyles = css`
     margin: 0;
     display: flex;
     align-items: center;
+    margin-bottom: 20px;
 
     svg {
       margin-right: 20px;
