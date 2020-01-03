@@ -106,7 +106,7 @@ const Header = ({ siteTitle }) => {
             <Link to="/resume">Resume</Link>
           </li>
           <li>
-            <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/dobladev">
+            <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/odysseycodes">
               <Twitter />
             </a>
           </li>
