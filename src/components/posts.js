@@ -110,8 +110,6 @@ const PostLayout = ({ data: { site: { siteMetadata: { repositoryUrl } }, mdx } }
     mdx.frontmatter.featuredImage.childImageSharp &&
     mdx.frontmatter.featuredImage.childImageSharp.fluid) || null
 
-  console.log(featuredImage)
-
   return (
     <Layout>
       <SEO title={mdx.frontmatter.title} description={mdx.excerpt} />
