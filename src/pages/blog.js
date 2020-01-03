@@ -19,12 +19,8 @@ const style = css`
     padding: 0;
   }
 
-  h1 {
-    font-size: 3.7em;
-    font-weight: 200;
-    margin-top: 0;
-    font-family: 'Text Me One', sans-serif;
-    grid-area: title;
+  h2 {
+    font-weight: 100;
   }
 
   h3 {
@@ -52,9 +48,12 @@ const style = css`
     list-style-type: none;
 
     .post {
+      margin-bottom: 40px;
+
       .gatsby-image-wrapper {
         margin-right: 40px;
         border-radius: 2px;
+        min-width: 350px;
       }
     }
     
@@ -78,7 +77,7 @@ const style = css`
   }
   
   .hook {
-    margin-top: 0;
+    margin: 0;
     font-size: 1.4rem;
   }
 
@@ -89,11 +88,7 @@ const style = css`
 
     .post {
       display: flex;
-      padding-left: 40px;
-
-      .gatsby-image-wrapper {
-        min-width: 200px;
-      }
+      padding-left: 20px;
     }
   }
 `
@@ -111,7 +106,7 @@ const blog = ({
   })
 
   const organizedPosts = {}
-  posts.sort((a, b) => a.fields.date - b.fields.date).forEach(post => {
+  posts.forEach(post => {
     if (!organizedPosts[post.fields.date.getFullYear()]) {
       organizedPosts[post.fields.date.getFullYear()] = []
     }
@@ -120,42 +115,42 @@ const blog = ({
 
   return (
     <Layout>
-      <SEO title="Recent Blog Posts" description="All blog posts" />
+      <SEO title="Articles" description="All blog posts" />
       <section css={style} className="double">
-        <h1 className="title">Recent Blog Posts</h1>
+        <h1 className="title">Articles</h1>
         <ul className="content unstyledList">
-          {Object.entries(organizedPosts).map(([year, yearPosts]) => (
-            <li key={year}>
-              <h2>{year}</h2>
-              <ul>
-                {yearPosts.map(({ id, fields: { slug, date }, frontmatter: { title, hook, featuredImage } }) => (
-                  <li key={id} className="post">
-                    {featuredImage && (
-                      <Img fixed={featuredImage.childImageSharp.fixed} />
-                    )}
-                    <div>
-                      <div className="time">
-                        <Calendar />
-                        <time dateTime={date.toISOString()}>
-                          {`${formatter.format(date)} ${date.getDate()}`}
-                        </time>
+          {Object.entries(organizedPosts)
+            .sort(([y1], [y2]) => y1 < y2)
+            .map(([year, yearPosts]) => (
+              <li key={year}>
+                <h2>{year}</h2>
+                <ul>
+                  {yearPosts.map(({ id, excerpt, fields: { slug, date }, frontmatter: { title, hook, featuredImage } }) => (
+                    <li key={id} className="post">
+                      {featuredImage && (
+                        <Img fixed={featuredImage.childImageSharp.fixed} />
+                      )}
+                      <div>
+                        <div className="time">
+                          <Calendar />
+                          <time dateTime={date.toISOString()}>
+                            {`${formatter.format(date)} ${date.getDate()}`}
+                          </time>
+                        </div>
+                        <span>
+                          <Link to={slug}>
+                            <h3>
+                              {title}
+                            </h3>
+                          </Link>
+                          <p className="hook">{hook || excerpt}</p>
+                        </span>
                       </div>
-                      <span>
-                        <Link to={slug}>
-                          <h3>
-                            {title}
-                          </h3>
-                        </Link>
-                        {hook && (
-                          <p className="hook">{hook}</p>
-                        )}
-                      </span>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            </li>
-          ))}
+                    </li>
+                  ))}
+                </ul>
+              </li>
+            ))}
         </ul>
         <aside>
           <div className="tagsContainer" >
@@ -172,10 +167,11 @@ const blog = ({
 export default blog
 export const pageQuery = graphql`
   query {
-    allMdx(sort: {order: DESC, fields: [frontmatter___title]}) {
+    allMdx(sort: {order: DESC, fields: [fields___date]}) {
       edges {
         node {
           id
+          excerpt
           frontmatter {
             title
             date
