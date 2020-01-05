@@ -127,7 +127,7 @@ const globalSyles = css`
     aside {
       grid-area: side;
 
-      a {
+      .noLinksDecoration a {
         text-decoration: none;
       }
     }

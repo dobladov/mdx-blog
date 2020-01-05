@@ -170,7 +170,7 @@ const PostLayout = ({ data: { site: { siteMetadata: { repositoryUrl } }, mdx } }
           )}
 
           {mdx.tableOfContents.items && (
-            <div className="toc">
+            <div className="toc noLinksDecoration">
               {toc(mdx.tableOfContents.items)}
             </div>
           )}
