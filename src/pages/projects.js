@@ -20,9 +20,9 @@ import TremendoLogo from '../../content/assets/projects/tremendo.svg'
 import PortfolioLogo from '../../content/assets/projects/logo.svg'
 import VueramaLogo from '../../content/assets/projects/vuerama.svg'
 import LastTimeLogo from '../../content/assets/projects/lastTime.svg'
-import CodepenLogo from '../../content/assets/projects/codepen.svg'
 import Youtube2AnkiLogo from '../../content/assets/projects/youtube2Anki.svg'
 import TatoebaBoxLogo from '../../content/assets/projects/tatoebaBox.svg'
+import { Terminal } from 'react-feather'
 
 const style = css`
   display: grid;
@@ -52,9 +52,13 @@ const style = css`
       fill: var(--text);
     }
 
-    &.codepen {
+    &.experiments {
       grid-column-start: 1;
       grid-column-end: -1;
+
+      svg {
+        fill: none;
+      }
     }
 
     .links {
@@ -291,11 +295,19 @@ const projects = [
     ]
   },
   {
-    title: 'Codepen',
-    logo: <CodepenLogo />,
-    className: 'codepen',
+    title: 'Experiments',
+    logo: <Terminal />,
+    className: 'experiments',
     content: <>
       <p>These are some of my codepen experiments.</p>
+
+      <h3><a href="http://codepen.io/dobladov/pen/kXAXJx" target="_blank" rel="noopener noreferrer">Carousel</a></h3>
+      <p>
+        A carousel using CSS and JQuery as a concept for a web music player, It got featured on Codepen, it has more than 286 favs, 1156 forks and 51,116 Views.
+      </p>
+
+      <h3><a href="https://codepen.io/dobladov/full/dmeMXO" target="_blank" rel="noopener noreferrer">Berlin Deutsche Bahn Stations</a></h3>
+      <p>Map made with <a href="https://d3js.org/">d3.js</a> to showcase all the statios in berlin using the DB public api.</p>
 
       <h3><a href="https://codepen.io/dobladov/pen/NGeEmZ" target="_blank" rel="noopener noreferrer">Rocky</a></h3>
       <p>Animation to learn how to use Greensock, a library for web animation.</p>
@@ -303,10 +315,8 @@ const projects = [
         It is my second pen with more success in codepen, even got to be featured, to this day has more than 7000 visits and 25 favorites.
       </p>
 
-      <h3><a href="http://codepen.io/dobladov/pen/kXAXJx" target="_blank" rel="noopener noreferrer">Carousel</a></h3>
-      <p>
-        A carousel using CSS and JQuery as a concept for a web music player, It got featured on Codepen, it has more than 286 favs, 1156 forks and 51,116 Views.
-      </p>
+      <h3><a href="https://codepen.io/dobladov/pen/qoodaR" target="_blank" rel="noopener noreferrer">German Frequency lists</a></h3>
+      <p>Frequency lists/German subtitles 1000: This list has been generated from subtitles of movies and television series with a total of about 25 million words in 2009.</p>
 
       <h3><a href="https://codepen.io/dobladov/pen/bBOWEe" target="_blank" rel="noopener noreferrer">Star Wars Intro</a></h3>
       <p>
@@ -327,11 +337,8 @@ const projects = [
       <h3><a href="http://codepen.io/dobladov/full/vNvZGe" target="_blank" rel="noopener noreferrer">Happy Sheep</a></h3>
       <p>Animation to improve my working methodology in which I create my own svg drawings myself with Inkscape, adding selectors for animation.</p>
 
-      <h3><a href="https://codepen.io/dobladov/full/dmeMXO" target="_blank" rel="noopener noreferrer">Berlin Deutsche Bahn Stations</a></h3>
-      <p>Map made with d3.js to showcase all the statios in berlin using the DB public api.</p>
-
-      <h3><a href="https://codepen.io/dobladov/pen/qoodaR" target="_blank" rel="noopener noreferrer">German Frequency lists</a></h3>
-      <p>Frequency lists/German subtitles 1000: This list has been generated from subtitles of movies and television series with a total of about 25 million words in 2009.</p>
+      <h3><a href="https://editor.p5js.org/dobladov/sketches">P5 Sketches</a></h3>
+      <p>Around 50 experiments where I play with vectors, physics, trigonometry, perlin noise, etc... in a visual way.</p>
     </>,
     links: [
       ['', '']
