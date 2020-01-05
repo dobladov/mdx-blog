@@ -82,7 +82,7 @@ const ProjectsPage = () => (
             </li>
           </ul>
 
-          <h3>Dabo Consulting</h3> <span>(Spain) 2013-2016</span>
+          <h3>Dabo Consulting</h3> <span>2013-2016</span>
 
           <ul>
             <li>Web development of internal tools, Wordpress blogs, and various other sites</li>
