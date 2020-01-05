@@ -32,8 +32,8 @@ const IndexPage = () => (
       <h1 className="title">Hello!</h1>
 
       <p>My name is <b>Daniel Doblado</b>, originally from Spain, I&apos;m a Front-end Developer currently based in <b>Berlin 🇩🇪</b>, with true passion for Open-source and building better platforms.</p>
-      <p>From time to time I <a target="_blank" rel="noopener noreferrer" href="https://github.com/dobladov/">develop</a> some <Link to="/projects">projects</Link> or <Link to="/blog">write</Link> about them.</p>
-
+      <p>From time to time I <a target="_blank" rel="noopener noreferrer" href="https://github.com/dobladov/">develop</a> some <Link to="/projects">projects</Link>.</p>
+      {/* or <Link to="/blog">write</Link> about them. */}
       <p className="important">I&apos;m looking for a new full-time position in Berlin or remote.</p>
       <p> Have a look at my <Link to="/resume" >resume</Link>.</p>
 
