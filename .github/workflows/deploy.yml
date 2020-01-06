@@ -24,8 +24,8 @@ jobs:
         
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v2
-      with:
+      env:
         ACTIONS_DEPLOY_KEY: ${{ secrets.GITHUB_TOKEN }}
         EXTERNAL_REPOSITORY: doblado/dobladov.github.io
-        BRANCH: master
-        FOLDER: ./public
+        PUBLISH_BRANCH: master
+        PUBLISH_DIR: ./public
