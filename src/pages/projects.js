@@ -64,7 +64,7 @@ const style = css`
     .links {
       display: flex;
       flex-wrap: wrap;
-      
+
       a {
         margin-right: 20px;
       }
@@ -287,7 +287,7 @@ const projects = [
     logo: <PortfolioLogo />,
     content: <>
       <p>The site you are visiting right now, build with Gatsby and using MDX for the articles</p>
-      <p>If you want to learn about recursion click the "Live" link.</p>
+      <p>If you want to learn about recursion click the &quot;Live&quot; link.</p>
     </>,
     links: [
       ['Live', '/projects'],
