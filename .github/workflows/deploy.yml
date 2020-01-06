@@ -21,11 +21,11 @@ jobs:
         npm install
         npm test
         npm run build
+        echo "odyssey.codes" > public/CNAME
         
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v2
       env:
-        #GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         PERSONAL_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
         EXTERNAL_REPOSITORY: dobladov/dobladov.github.io
         PUBLISH_BRANCH: master
