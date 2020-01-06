@@ -31,7 +31,7 @@ const style = css`
       font-size: 1.2rem;
       padding: 0;
       align-items: center;
-      
+
       svg {
         top: 6px;
         position: relative;
@@ -66,8 +66,6 @@ const style = css`
     display: flex;
 
     .mainNav ul {
-      
-
       li:first-child a {
       padding-left: 10px;
       }
@@ -76,9 +74,9 @@ const style = css`
 `
 
 const Header = ({ siteTitle }) => {
-  const [darkMode, setDarkMode] = useState(true)
+  const [darkMode, setDarkMode] = useState(false)
   useEffect(() => {
-    setDarkMode(JSON.parse(localStorage.getItem('darkMode') || true))
+    setDarkMode(JSON.parse(localStorage.getItem('darkMode')) || false)
   }, [])
 
   return (
@@ -151,8 +149,8 @@ const Header = ({ siteTitle }) => {
               className="darkModeBtn"
               onClick={() => {
                 darkMode
-                  ? document.body.classList.add('light')
-                  : document.body.classList.remove('light')
+                  ? document.body.classList.remove('dark')
+                  : document.body.classList.add('dark')
                 localStorage.setItem('darkMode', !darkMode)
                 setDarkMode(!darkMode)
               }}

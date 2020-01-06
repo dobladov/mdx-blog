@@ -18,11 +18,10 @@ import 'normalize.css'
 
 const globalSyles = css`
   :root {
-    --main-bg: hsl(0, 0%, 1%);
-    --main-bg-contrast: hsl(0, 0%, 6%);
-    --contrast: hsl(154, 44%, 49%);
+    --main-bg: hsl(0, 0%, 96%);
+    --main-bg-contrast: hsl(0, 0%, 94%);
+    --text: hsl(0, 0%, 24%);
     --contrast: hsl(154, 45%, 48%);
-    --text: hsl(0, 0%, 100%);
     --important: hsl(5, 83%, 64%);
     --subtle: hsl(0, 0%, 40.8%);
   }
@@ -46,15 +45,14 @@ const globalSyles = css`
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
     line-height: 1.6;
     font-weight: 300;
-    background-image: url(${backgroundDark});
+    background-image: url(${backgroundLight});
     background-attachment: fixed;
-    
-    &.light {
-      --main-bg: hsl(0, 0%, 96%);
-      --main-bg-contrast: hsl(0, 0%, 94%);
-      --text: hsl(0, 0%, 24%);
-      /* --contrast: hsl(5, 83%, 64%); */
-      background-image: url(${backgroundLight});
+
+    &.dark {
+      --main-bg: hsl(0, 0%, 1%);
+      --main-bg-contrast: hsl(0, 0%, 6%);
+      --text: hsl(0, 0%, 100%);
+      background-image: url(${backgroundDark});
     }
   }
 
@@ -166,8 +164,8 @@ const Layout = ({ children }) => {
 
   useEffect(() => {
     const darkMode = JSON.parse(localStorage.getItem('darkMode'))
-    if (darkMode === false) {
-      document.body.classList.add('light')
+    if (darkMode === true) {
+      document.body.classList.add('dark')
     }
   }, [])
 
