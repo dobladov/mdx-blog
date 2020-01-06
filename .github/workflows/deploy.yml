@@ -19,12 +19,13 @@ jobs:
         node-version: '13.x' 
     - run: |
         npm install
+        npm test
         npm run build
         
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v2
       with:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        ACTIONS_DEPLOY_KEY: ${{ secrets.GITHUB_TOKEN }}
         EXTERNAL_REPOSITORY: doblado/dobladov.github.io
         BRANCH: master
         FOLDER: ./public
