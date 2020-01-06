@@ -3,7 +3,7 @@ import React from 'react'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 
-import { css } from '@emotion/core'
+import { css, Global } from '@emotion/core'
 import { Link } from 'gatsby'
 
 const style = css`
@@ -49,11 +49,53 @@ const style = css`
       }
     }
   }
+
+  @media print {
+    .title {
+      font-size: 2rem;
+      margin: 10px 0;
+      line-height: 1.5rem;
+    }
+
+    h2 {
+      line-height: 1rem;
+    }
+
+    .content {
+      font-size: 1rem;
+    }
+
+    aside {
+      display: flex;
+      flex-wrap: wrap;
+
+      > div {
+        width: 45%;
+      }
+    }
+
+    #skills {
+      h2 {
+        padding-bottom: 10px;
+      }
+
+      p {
+        display: none;
+      }
+    }
+  }
 `
 
 const ProjectsPage = () => (
   <Layout>
     <SEO title="Resume Daniel Doblado" />
+    <Global styles={css`
+      @media print {
+        header {
+          display: none;
+        }
+      }
+    `}/>
     <section className="double" css={style}>
 
       <h1 className="title">
@@ -168,7 +210,6 @@ const ProjectsPage = () => (
                 </li>
               </ul>
             </li>
-           
           </ul>
         </div>
 
@@ -198,6 +239,7 @@ const ProjectsPage = () => (
             <li>Mapbox-GL</li>
             <li>D3.js</li>
             <li>Apache</li>
+            <li>ESLint</li>
             <li>Nginx</li>
             <li>Python</li>
             <li>PHP</li>
