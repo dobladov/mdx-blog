@@ -1,10 +1,10 @@
 import React from 'react'
+import { css, Global } from '@emotion/core'
+import { Link } from 'gatsby'
+import { Mail, Smartphone } from 'react-feather'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-
-import { css, Global } from '@emotion/core'
-import { Link } from 'gatsby'
 
 const style = css`
   h2, h3 {
@@ -47,6 +47,17 @@ const style = css`
       li  {
         padding: 0 10px;
       }
+    }
+  }
+
+  #contact {
+    li {
+      display: flex;
+      align-items: center;
+    }
+
+    svg {
+      margin-right: 10px;
     }
   }
 
@@ -175,10 +186,10 @@ const ProjectsPage = () => (
 
           <ul>
             <li>
-              <b>Phone:</b> <a href="tel:+49 17655574077">+49 17655574077</a>
+              <Smartphone /><a href="tel:+49 17655574077">+49 17655574077</a>
             </li>
             <li>
-              <b>E-Mail:</b> <a href="mailto: danieldoblado@gmail.com">danieldoblado@gmail.com</a>
+              <Mail /><a href="mailto: danieldoblado@gmail.com">danieldoblado@gmail.com</a>
             </li>
           </ul>
         </div>
@@ -231,7 +242,7 @@ const ProjectsPage = () => (
             <li>Lit-html</li>
             <li>PostCSS</li>
             <li>Emotion-css</li>
-            <li>Tailwind </li>
+            <li>Bootstrap</li>
             <li>Wehooks</li>
             <li>ES6</li>
             <li>Node.js</li>
