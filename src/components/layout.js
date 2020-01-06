@@ -1,15 +1,10 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
 import { Global, css } from '@emotion/core'
+
+import { getDarkMode } from '../common'
 import backgroundDark from '../../content/assets/papyrus-dark.png'
 import backgroundLight from '../../content/assets/white-waves.png'
 
@@ -163,10 +158,7 @@ const Layout = ({ children }) => {
   `)
 
   useEffect(() => {
-    const darkMode = JSON.parse(localStorage.getItem('darkMode'))
-    if (darkMode === true) {
-      document.body.classList.add('dark')
-    }
+    getDarkMode() && document.body.classList.add('dark')
   }, [])
 
   return (
@@ -181,6 +173,15 @@ const Layout = ({ children }) => {
             {`
               .noScript {
                 display: none;
+              }
+
+              @media (prefers-color-scheme: dark) {
+                body {
+                  --main-bg: hsl(0, 0%, 1%);
+                  --main-bg-contrast: hsl(0, 0%, 6%);
+                  --text: hsl(0, 0%, 100%);
+                  background-image: url(${backgroundDark});
+                }
               }
             `}
           </style>

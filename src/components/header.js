@@ -4,6 +4,7 @@ import { Link } from 'gatsby'
 import { css } from '@emotion/core'
 import { Twitter, GitHub, Rss, Sun, Moon, Codepen, Mail, Key } from 'react-feather'
 
+import { getDarkMode } from '../common'
 import ObservableHQLogo from '../../content/assets/observableHQ.svg'
 import StackOverflowLogo from '../../content/assets/stackoverflow.svg'
 
@@ -76,7 +77,7 @@ const style = css`
 const Header = ({ siteTitle }) => {
   const [darkMode, setDarkMode] = useState(false)
   useEffect(() => {
-    setDarkMode(JSON.parse(localStorage.getItem('darkMode')) || false)
+    setDarkMode(getDarkMode())
   }, [])
 
   return (

@@ -8,4 +8,10 @@ export const throttle = (fn, wait) => {
   }
 }
 
-export default { throttle }
+export const getDarkMode = () => {
+  const localValue = JSON.parse(localStorage.getItem('darkMode'))
+  return (localValue === true) ||
+    ((localValue === null) && (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches))
+}
+
+export default { throttle, getDarkMode }
