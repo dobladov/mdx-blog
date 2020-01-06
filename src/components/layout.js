@@ -5,7 +5,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 import { Global, css } from '@emotion/core'
 
 import { getDarkMode } from '../common'
-import backgroundDark from '../../content/assets/papyrus-dark.png'
+import backgroundDark from '../../content/assets/cartographer.png'
 import backgroundLight from '../../content/assets/white-waves.png'
 
 import Header from './header'
@@ -44,8 +44,8 @@ const globalSyles = css`
     background-attachment: fixed;
 
     &.dark {
-      --main-bg: hsl(0, 0%, 1%);
-      --main-bg-contrast: hsl(0, 0%, 6%);
+      --main-bg: hsl(0, 0%, 4%);
+      --main-bg-contrast: hsl(0, 0%, 7%);
       --text: hsl(0, 0%, 100%);
       background-image: url(${backgroundDark});
     }
