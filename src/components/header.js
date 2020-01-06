@@ -97,13 +97,13 @@ const Header = ({ siteTitle }) => {
       <nav className="mainNav">
         <ul role="navigation">
           <li>
-            <Link to="/blog">Articles</Link>
+            <Link to="/resume">Resume</Link>
           </li>
+          {/* <li>
+            <Link to="/blog">Articles</Link>
+          </li> */}
           <li>
             <Link to="/projects">Projects</Link>
-          </li>
-          <li>
-            <Link to="/resume">Resume</Link>
           </li>
           <li>
             <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/odysseycodes">
