@@ -1,7 +1,7 @@
 import React from 'react'
 import { css, Global } from '@emotion/core'
 import { Link } from 'gatsby'
-import { Mail, Smartphone } from 'react-feather'
+import { Mail, Smartphone, UserPlus } from 'react-feather'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
@@ -190,6 +190,9 @@ const ProjectsPage = () => (
             </li>
             <li>
               <Mail /><a href="mailto: danieldoblado@gmail.com">danieldoblado@gmail.com</a>
+            </li>
+            <li>
+              <UserPlus /><a href="/Daniel-Doblado.vcf">Add as contact</a>
             </li>
           </ul>
         </div>
