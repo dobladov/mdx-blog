@@ -140,9 +140,9 @@ const Header = ({ siteTitle }) => {
             </a>
           </li>
           <li>
-            <Link to="/rss.xml">
+            <a to="/rss.xml">
               <Rss />
-            </Link>
+            </a>
           </li>
           <li className="noScript">
             <button
