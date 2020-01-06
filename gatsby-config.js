@@ -92,7 +92,10 @@ module.exports = {
             policy: [{ userAgent: '*', disallow: ['/'] }]
           },
           production: {
-            policy: [{ userAgent: 'ia_archiver', disallow: '/' }]
+            policy: [
+              { userAgent: 'ia_archiver', disallow: '/' },
+              { userAgent: '*', disallow: '/resume' }
+            ]
           }
         }
       }
