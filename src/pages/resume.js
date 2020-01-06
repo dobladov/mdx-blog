@@ -24,7 +24,8 @@ const style = css`
     display: grid;
   }
 
-  #about {
+  #about,
+  #contact {
     span {
       font-size: .9rem;
     }
@@ -127,6 +128,19 @@ const ProjectsPage = () => (
       </div>
 
       <aside>
+        <div id="contact">
+          <h2>Contact</h2>
+
+          <ul>
+            <li>
+              <b>Phone:</b> <a href="tel:+49 17655574077">+49 17655574077</a>
+            </li>
+            <li>
+              <b>E-Mail:</b> <a href="mailto: danieldoblado@gmail.com">danieldoblado@gmail.com</a>
+            </li>
+          </ul>
+        </div>
+
         <div id="about">
           <h2>About</h2>
 
@@ -154,12 +168,7 @@ const ProjectsPage = () => (
                 </li>
               </ul>
             </li>
-            <li>
-              <b>Phone:</b> <a href="tel:+49 17655574077">+49 17655574077</a>
-            </li>
-            <li>
-              <b>E-Mail:</b> <a href="mailto: danieldoblado@gmail.com">danieldoblado@gmail.com</a>
-            </li>
+           
           </ul>
         </div>
 
@@ -202,6 +211,8 @@ const ProjectsPage = () => (
             <li>Graph-QL</li>
             <li>Git</li>
             <li>Flask</li>
+            <li>Jest</li>
+            <li>Enzyme</li>
             <li>Prestashop</li>
             <li>Greenshok</li>
             <li>Anime.js</li>
