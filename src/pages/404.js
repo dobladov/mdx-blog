@@ -28,7 +28,6 @@ const style = css`
   }
 `
 
-
 const NotFoundPage = () => (
   <Layout>
     <SEO title="404: Not found" />
