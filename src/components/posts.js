@@ -27,8 +27,13 @@ const style = css`
     align-items: center;
   }
 
-  .toc ul {
-    padding-left: 20px;
+  .toc {
+    position: sticky;
+    top: 100px;
+
+    ul {
+      padding-left: 20px;
+    }
   }
 
   .contains-task-list {
