@@ -1,4 +1,3 @@
-// const slug = require('remark-slug')
 const emoji = require('remark-emoji')
 const highlight = require('remark-highlight.js')
 
