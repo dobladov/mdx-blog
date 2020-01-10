@@ -125,11 +125,13 @@ const blog = ({
               <li key={year}>
                 <h2>{year}</h2>
                 <ul>
-                  {yearPosts.map(({ id, excerpt, fields: { slug, date }, frontmatter: { title, hook, featuredImage } }) => (
+                  {yearPosts.map(({ id, excerpt, fields: { slug, date }, frontmatter: { title, hook } }) => (
                     <li key={id} className="post">
-                      {featuredImage && (
-                        <Img fixed={featuredImage.childImageSharp.fixed} />
-                      )}
+                      {/* {featuredImage && (
+                        <div style={{ maxHeight: `150px`, marginBottom: `1.45rem` }} className="gatsby-image-wrapper">
+                          <Img fixed={featuredImage.childImageSharp.fixed} style={{maxHeight: '100%'}} />
+                        </div>
+                      )} */}
                       <div>
                         <div className="time">
                           <Calendar />
@@ -176,13 +178,6 @@ export const pageQuery = graphql`
             title
             date
             hook
-            featuredImage {
-              childImageSharp {
-                fixed(width: 350, toFormat: WEBP, quality: 90) {
-                  ...GatsbyImageSharpFixed
-                }
-              }
-            }
           }
           fields {
             slug
