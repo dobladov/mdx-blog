@@ -56,7 +56,7 @@ const style = css`
         min-width: 350px;
       }
     }
-    
+
     li:first-child h2 {
       margin-top: 0;
     }
@@ -75,7 +75,7 @@ const style = css`
       }
     }
   }
-  
+
   .hook {
     margin: 0;
     font-size: 1.4rem;

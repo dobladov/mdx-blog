@@ -1,4 +1,4 @@
-const slug = require('remark-slug')
+// const slug = require('remark-slug')
 const emoji = require('remark-emoji')
 const highlight = require('remark-highlight.js')
 
@@ -57,9 +57,12 @@ module.exports = {
           },
           {
             resolve: 'gatsby-remark-smartypants'
+          },
+          {
+            resolve: 'gatsby-remark-autolink-headers'
           }
         ],
-        remarkPlugins: [highlight, slug, emoji]
+        remarkPlugins: [highlight, emoji]
       }
     },
     'gatsby-transformer-sharp',

@@ -15,7 +15,7 @@ const formatter = new Intl.DateTimeFormat('en', { month: 'long' })
 const style = css`
   .tags {
     display: inline-block;
-    
+
     li {
       display: inline-block;
     }
@@ -26,7 +26,7 @@ const style = css`
     display: flex;
     align-items: center;
   }
-  
+
   .toc ul {
     padding-left: 20px;
   }
@@ -82,6 +82,25 @@ const style = css`
     font-size: .9rem;
     display: flex;
     justify-content: space-between;
+  }
+
+  h2, h3, h4, h5, h6 {
+    a.anchor.before {
+      stroke: var(--text);
+      position: absolute;
+      left: -40px;
+      padding-left: 10px;
+      padding-right: 20px;
+      opacity: 0;
+
+      &:focus {
+        opacity: 1;
+      }
+    }
+
+    &:hover a.anchor.before {
+      opacity: 1;
+    }
   }
 `
 

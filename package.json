@@ -21,6 +21,7 @@
     "gatsby-plugin-robots-txt": "^1.5.0",
     "gatsby-plugin-sharp": "^2.3.10",
     "gatsby-plugin-sitemap": "^2.2.24",
+    "gatsby-remark-autolink-headers": "^2.1.23",
     "gatsby-remark-copy-linked-files": "^2.1.33",
     "gatsby-remark-images": "^3.1.39",
     "gatsby-remark-smartypants": "^2.1.19",
@@ -34,8 +35,7 @@
     "react-helmet": "^5.2.1",
     "react-syntax-highlighter": "^12.2.1",
     "remark-emoji": "^2.0.2",
-    "remark-highlight.js": "^5.2.0",
-    "remark-slug": "^5.1.2"
+    "remark-highlight.js": "^5.2.0"
   },
   "devDependencies": {
     "eslint": "^6.8.0",
