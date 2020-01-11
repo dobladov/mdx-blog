@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { graphql, Link } from 'gatsby'
 import { css } from '@emotion/core'
 import { Tag, Calendar } from 'react-feather'
-import Img from 'gatsby-image'
+// import Img from 'gatsby-image'
 
 import SEO from '../components/seo'
 import Layout from '../components/layout'
