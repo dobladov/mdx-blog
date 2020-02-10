@@ -135,6 +135,10 @@ const globalSyles = css`
       display: block;
 
     }
+
+    aside {
+      margin-top: 50px;
+    }
   }
 `
 
