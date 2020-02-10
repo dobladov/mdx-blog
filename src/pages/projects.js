@@ -304,7 +304,7 @@ const projects = [
 
       <h3><a target="_blank" rel="noopener noreferrer" href="https://observablehq.com/@dobladov/coronavirus-2019-ncov">Coronavirus 2019-nCoV Map</a></h3>
 
-      Map representing the current cases of Coronavirus around the world scrapping data from <a target="_blank" rel="noopener noreferrer" href="https://ncov.dxy.cn/ncovh5/view/pneumonia">DXY</a>
+      Map representing the current cases of Coronavirus around the world scrapping data from <a target="_blank" rel="noopener noreferrer" href="https://ncov.dxy.cn/ncovh5/view/pneumonia">DXY</a>.
 
       <h3><a href="http://codepen.io/dobladov/pen/kXAXJx" target="_blank" rel="noopener noreferrer">Carousel</a></h3>
       <p>
