@@ -86,6 +86,10 @@ const globalSyles = css`
     }
   }
 
+  .hljs {
+    border-radius: 5px;
+  }
+
   .title {
     font-size: 5em;
     line-height: 5.3rem;
