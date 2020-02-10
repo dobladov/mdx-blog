@@ -145,7 +145,7 @@ const PostLayout = ({ data: { site: { siteMetadata: { repositoryUrl } }, mdx } }
           )}
 
           {featuredImage && (
-            <Img fluid={featuredImage} />
+            <Img fluid={featuredImage} alt={`Featured image for ${mdx.frontmatter.title}`} />
           )}
 
           <MDXRenderer>{mdx.body}</MDXRenderer>
