@@ -98,9 +98,9 @@ const Header = ({ siteTitle }) => {
           <li>
             <Link to="/resume">Resume</Link>
           </li>
-          {/* <li>
+          <li>
             <Link to="/blog">Articles</Link>
-          </li> */}
+          </li>
           <li>
             <Link to="/projects">Projects</Link>
           </li>
