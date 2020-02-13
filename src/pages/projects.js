@@ -339,9 +339,6 @@ const projects = [
       <h3><a href="http://codepen.io/dobladov/pen/BoqYOO" target="_blank" rel="noopener noreferrer">Loading Animation</a></h3>
       <p>With this I intended to animate SVG and learn a little to use 3D perspectives.</p>
 
-      <h3><a href="http://codepen.io/dobladov/full/vNvZGe" target="_blank" rel="noopener noreferrer">Happy Sheep</a></h3>
-      <p>Animation to improve my working methodology in which I create my own svg drawings myself with Inkscape, adding selectors for animation.</p>
-
       <h3><a href="https://editor.p5js.org/dobladov/sketches">P5 Sketches</a></h3>
       <p>Around 50 experiments where I play with vectors, physics, trigonometry, perlin noise, etc... in a visual way.</p>
     </>,
