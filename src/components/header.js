@@ -51,6 +51,12 @@ const style = css`
       a {
         font-weight: bold;
         padding: 10px;
+        position: relative;
+
+        &.active {
+          color: var(--contrast);
+          text-decoration: none;
+        }
       }
 
       li {
@@ -85,7 +91,7 @@ const Header = ({ siteTitle }) => {
       <h1 style={{ margin: 0 }}>
         <Link
           to="/"
-          title="Daniel Doblado"
+          title="Home"
           style={{
             textDecoration: 'none'
           }}
@@ -96,41 +102,56 @@ const Header = ({ siteTitle }) => {
       <nav className="mainNav">
         <ul role="navigation">
           <li>
-            <Link to="/resume">Resume</Link>
+            <Link
+              activeClassName="active"
+              title="My Resume"
+              to="/resume">
+                Resume
+            </Link>
           </li>
           <li>
-            <Link to="/blog">Articles</Link>
+            <Link
+              activeClassName="active"
+              title="Blog Articles"
+              to="/blog">
+                Articles
+            </Link>
           </li>
           <li>
-            <Link to="/projects">Projects</Link>
+            <Link
+              activeClassName="active"
+              title="Personal Projects"
+              to="/projects">
+                Projects
+            </Link>
           </li>
           <li>
-            <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/odysseycodes">
+            <a title="Twitter @odysseycodes" target="_blank" rel="noopener noreferrer" href="https://twitter.com/odysseycodes">
               <Twitter />
             </a>
           </li>
           <li>
-            <a target="_blank" rel="noopener noreferrer" href="https://github.com/dobladov">
+            <a title="My repositories on GitHub" target="_blank" rel="noopener noreferrer" href="https://github.com/dobladov">
               <GitHub />
             </a>
           </li>
           <li>
-            <a target="_blank" rel="noopener noreferrer" href="https://codepen.io/dobladov">
+            <a title="Mostly layouts and concepts at CodePen" target="_blank" rel="noopener noreferrer" href="https://codepen.io/dobladov">
               <Codepen />
             </a>
           </li>
           <li>
-            <a target="_blank" rel="noopener noreferrer" href="https://observablehq.com/@dobladov">
+            <a title="Data visualizations at ObservableHQ" target="_blank" rel="noopener noreferrer" href="https://observablehq.com/@dobladov">
               <ObservableHQLogo />
             </a>
           </li>
           <li>
-            <a target="_blank" rel="noopener noreferrer" href="https://stackoverflow.com/users/2498992/daniel-doblado">
+            <a title="Helping other developers in Stack Overflow" target="_blank" rel="noopener noreferrer" href="https://stackoverflow.com/users/2498992/daniel-doblado">
               <StackOverflowLogo />
             </a>
           </li>
           <li>
-            <a href="mailto:danieldoblado@gmail.com">
+            <a title="E-Mail danieldoblado@gmail.com" href="mailto:danieldoblado@gmail.com">
               <Mail />
             </a>
           </li>
@@ -140,7 +161,7 @@ const Header = ({ siteTitle }) => {
             </a>
           </li>
           <li>
-            <a href="/rss.xml">
+            <a title="Follow my blog articles" href="/rss.xml">
               <Rss />
             </a>
           </li>
@@ -148,6 +169,7 @@ const Header = ({ siteTitle }) => {
             <button
               aria-label="Toggle dark theme"
               className="darkModeBtn"
+              title={darkMode ? 'Use light theme' : 'Use dark theme'}
               onClick={() => {
                 darkMode
                   ? document.body.classList.remove('dark')
