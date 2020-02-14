@@ -88,6 +88,7 @@ const globalSyles = css`
 
   .hljs {
     border-radius: 5px;
+    font-size: calc(14px + 0.25vw);
   }
 
   .title {
@@ -134,6 +135,11 @@ const globalSyles = css`
     .double {
       display: block;
 
+      .title {
+        word-wrap: break-word;
+        font-size: 3rem;
+        line-height: 3.4rem;
+      }
     }
 
     aside {
