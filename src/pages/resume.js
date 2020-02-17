@@ -119,7 +119,7 @@ const ProjectsPage = () => (
 
           <h2>Experience</h2>
 
-          <h3>Graphthinking</h3> <span>2018 - Currently</span>
+          <h3>Graphthinking GmbH</h3> <span>2017 - Currently</span>
 
           <ul>
             <li>
