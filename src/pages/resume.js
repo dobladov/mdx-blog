@@ -115,7 +115,7 @@ const ProjectsPage = () => (
 
       <div className="content">
         <div id="experience">
-          <p>Front-End Developer, currently looking for a new full-time position in Berlin or remote.</p>
+          <p>Web Developer, currently looking for a new full-time position in Berlin or remote.</p>
 
           <h2>Experience</h2>
 
@@ -123,7 +123,7 @@ const ProjectsPage = () => (
 
           <ul>
             <li>
-              Develop the <a href="https://oerworldmap.org/resource/">OER World Map</a> as the <a href="https://github.com/hbz/oerworldmap-ui/graphs/contributors">main</a> Front-End developer, this project for the <a href="https://hewlett.org/">Hewlett Foundation</a> was granted with the <a href="https://oerworldmap.wordpress.com/2018/05/03/catalysing-open-innovation-oer-world-map-at-oer18-and-oeglobal18/"> Open Inovation Award</a>, it consisted on complete refactor of the UI from the ground using React, Mapbox-GL, server side rendering, Elasticsearch, Reactive-search, and many other modern technologies and tools.
+              Develop the <a href="https://oerworldmap.org/resource/">OER World Map</a> as the <a href="https://github.com/hbz/oerworldmap-ui/graphs/contributors">main</a> Web developer, this project for the <a href="https://hewlett.org/">Hewlett Foundation</a> was granted with the <a href="https://oerworldmap.wordpress.com/2018/05/03/catalysing-open-innovation-oer-world-map-at-oer18-and-oeglobal18/"> Open Inovation Award</a>, it consisted on complete refactor of the UI from the ground using React, Mapbox-GL, server side rendering, Elasticsearch, Reactive-search, and many other modern technologies and tools.
             </li>
             <li>
                 Develop of <a href="http://skohub.io/">SkoHub</a> in collaboration wiht <a href="https://www.hbz-nrw.de/">Hochschulbibliothekszentrum (HBZ)</a>, creating backend functionality for automatic <a href="https://www.gatsbyjs.org/">Gatsby</a> builds using webhooks, compatible with both Github and Gitlab triggers.
