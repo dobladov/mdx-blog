@@ -101,14 +101,14 @@ const Header = ({ siteTitle }) => {
       </h1>
       <nav className="mainNav">
         <ul role="navigation">
-          <li>
+          {/* <li>
             <Link
               activeClassName="active"
               title="My Resume"
               to="/resume">
                 Resume
             </Link>
-          </li>
+          </li> */}
           <li>
             <Link
               activeClassName="active"
