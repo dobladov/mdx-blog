@@ -218,7 +218,9 @@ const Layout = ({ children, className, wrapperStyle }) => {
 }
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
+  className: PropTypes.string,
+  wrapperStyle: PropTypes.string
 }
 
 export default Layout
