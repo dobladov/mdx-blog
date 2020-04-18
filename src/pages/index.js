@@ -22,8 +22,29 @@ const style = css`
   }
 `
 
+const layoutStyle = css`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+`
+
+const wrapperStyle = css`
+  flex: 1;
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  
+  main {
+    flex: 1;
+    margin: 0 auto;
+  }
+`
+
 const IndexPage = () => (
-  <Layout>
+  <Layout
+    css={layoutStyle}
+    wrapperStyle={wrapperStyle}
+  >
     <SEO
       title="Hello!"
       description="I&apos;m a Web Developer currently based in Berlin 🇩🇪, with true passion for Open-source and building better platforms."

@@ -164,7 +164,7 @@ const style = css`
   }
 `
 
-const Layout = ({ children }) => {
+const Layout = ({ children, className, wrapperStyle }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -180,11 +180,11 @@ const Layout = ({ children }) => {
   }, [])
 
   return (
-    <>
+    <div className={className}>
       <Global styles={globalSyles} />
       <Header siteTitle={data.site.siteMetadata.title} />
       <div
-        css={style}
+        css={[style, wrapperStyle]}
       >
         <noscript>
           <style>
@@ -213,7 +213,7 @@ const Layout = ({ children }) => {
         </Helmet>
 
       </div>
-    </>
+    </div>
   )
 }
 
