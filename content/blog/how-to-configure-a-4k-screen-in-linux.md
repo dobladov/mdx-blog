@@ -61,7 +61,7 @@ Now we add the mode to the outut, if you are not sure which one is the output, r
 
 We use the name of the output.
 
-```
+```bash
 xrandr --addmode HDMI-2 3840x2160
 ```
 
