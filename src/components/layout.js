@@ -131,6 +131,10 @@ const globalSyles = css`
     }
   }
 
+  pre {
+    word-wrap: break-word;
+  }
+
   @media (max-width: 900px) {
     .double {
       display: block;
