@@ -119,7 +119,14 @@ const ProjectsPage = () => (
 
           <h2>Experience</h2>
 
-          <h3>Graphthinking GmbH</h3> <span>2017 - Currently</span>
+          <h3>Zattoo</h3> <span>April 2020 - Current</span>
+
+          <ul>
+            <li>Develop streaming PWA</li>
+            <li>Develop google cast application</li>
+          </ul>
+
+          <h3>Graphthinking GmbH</h3> <span>2017 - 2020</span>
 
           <ul>
             <li>
