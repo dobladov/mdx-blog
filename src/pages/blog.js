@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql, Link } from 'gatsby'
 import { css } from '@emotion/core'
-import { Tag, Calendar } from 'react-feather'
+import { Tag } from 'react-feather'
 // import Img from 'gatsby-image'
 
 import SEO from '../components/seo'
@@ -134,7 +134,6 @@ const blog = ({
                       )} */}
                       <div>
                         <div className="time">
-                          <Calendar />
                           <time dateTime={date.toISOString()}>
                             {`${formatter.format(date)} ${date.getDate()}`}
                           </time>
