@@ -22,11 +22,11 @@ module.exports = {
     'react'
   ],
   rules: {
-    "react/jsx-uses-react": 1,
+    'react/jsx-uses-react': 1
   },
-  "settings": {
-    "react": {
-      "version": "detect"
+  settings: {
+    react: {
+      version: 'detect'
     }
   }
 }
