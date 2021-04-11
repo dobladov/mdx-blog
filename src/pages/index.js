@@ -1,5 +1,5 @@
 import React from 'react'
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 import { Link } from 'gatsby'
 
 import Layout from '../components/layout'
@@ -33,7 +33,7 @@ const wrapperStyle = css`
   min-height: 100%;
   display: flex;
   align-items: center;
-  
+
   main {
     flex: 1;
     margin: 0 auto;

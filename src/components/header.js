@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 import { Twitter, GitHub, Rss, Sun, Moon, Codepen, Mail, Key } from 'react-feather'
 
 import { getDarkMode } from '../common'
@@ -178,11 +178,13 @@ const Header = ({ siteTitle }) => {
                 setDarkMode(!darkMode)
               }}
             >
-              {darkMode ? (
+              {darkMode
+                ? (
                 <Sun />
-              ) : (
+                  )
+                : (
                 <Moon />
-              )}
+                  )}
             </button>
           </li>
         </ul>

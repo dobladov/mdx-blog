@@ -1,5 +1,5 @@
 import React from 'react'
-import { css, Global } from '@emotion/core'
+import { css, Global } from '@emotion/react'
 import { Link } from 'gatsby'
 import { Mail, Smartphone, UserPlus } from 'react-feather'
 

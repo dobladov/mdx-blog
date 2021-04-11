@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import { graphql, Link } from 'gatsby'
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { Calendar, Clock, Tag } from 'react-feather'
 import Layout from './layout'

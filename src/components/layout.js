@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
-import { Global, css } from '@emotion/core'
+import { Global, css } from '@emotion/react'
 
 import { getDarkMode } from '../common'
 import backgroundDark from '../../content/assets/cartographer.png'

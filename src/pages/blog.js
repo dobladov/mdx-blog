@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql, Link } from 'gatsby'
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 import { Tag } from 'react-feather'
 // import Img from 'gatsby-image'
 
