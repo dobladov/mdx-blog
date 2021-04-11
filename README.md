@@ -1,6 +1,6 @@
 ## mdx-blog
 
-Source for the site [odyssey.codes](https://odyssey.codes/)
+Source for the site [dobladov.github.io](https://dobladov.github.io/)
 
 ## Install
 

@@ -3,7 +3,7 @@ const { join } = require('path')
 const emoji = require('remark-emoji')
 const highlight = require('remark-highlight.js')
 
-const siteUrl = 'https://odyssey.codes'
+const siteUrl = 'https://dobladov.github.io'
 const title = 'Odyssey Codes'
 
 module.exports = {
