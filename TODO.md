@@ -1,0 +1,5 @@
+- [] Fix RSS
+- [x] Update all packages
+- [] Refactor the layout
+- [] Replace emotion for normal CSS
+- [] Fix redirect
