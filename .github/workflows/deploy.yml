@@ -21,7 +21,6 @@ jobs:
         npm install
         npm test
         npm run build
-        echo "dobladov.github.io" > public/CNAME
 
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v2
