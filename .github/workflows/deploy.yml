@@ -16,11 +16,12 @@ jobs:
     - name: Build
       uses: actions/setup-node@v1
       with:
-        node-version: '15.x'
+        node-version: '16.x'
     - run: |
         npm install
         npm test
         npm run build
+        echo "dobladov.github.io" > public/CNAME
 
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v2
