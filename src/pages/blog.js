@@ -113,6 +113,8 @@ const blog = ({
     organizedPosts[post.fields.date.getFullYear()].push(post)
   })
 
+  console.log(organizedPosts)
+
   return (
     <Layout>
       <SEO title="Articles" description="All blog posts" />
@@ -120,7 +122,7 @@ const blog = ({
         <h1 className="title">Articles</h1>
         <ul className="content unstyledList">
           {Object.entries(organizedPosts)
-            .sort(([y1], [y2]) => y1 < y2)
+            .sort(([y1], [y2]) => +y2 - +y1)
             .map(([year, yearPosts]) => (
               <li key={year}>
                 <h2>{year}</h2>
