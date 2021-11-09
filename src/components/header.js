@@ -12,24 +12,22 @@ const style = css`
   padding: 20px 40px;
   font-family: 'Text Me One', sans-serif;
   align-items: center;
+  display: flex;
+  justify-content: space-between;
 
   h1 {
-    flex: 1;
     margin: 0;
-    display: flex;
-    align-items: center;
 
     a {
       color: var(--text);
     }
   }
 
-  .mainNav {
+  .nav {
     ul {
       list-style-type: none;
-      display: flex;
-      flex-wrap: wrap;
       font-size: 1.2rem;
+      display: inline-block;
       padding: 0;
       align-items: center;
 
@@ -50,7 +48,7 @@ const style = css`
 
       a {
         font-weight: bold;
-        padding: 10px;
+        padding-left: 20px;
         position: relative;
 
         &.active {
@@ -60,23 +58,18 @@ const style = css`
       }
 
       li {
+        display: inline-block;
         margin-bottom: 10px;
       }
 
-      li:first-child a {
-        padding-left: 0;
-      }
+      // li:first-child a {
+      //   padding-left: 0;padding-leftpadding-left
+      // }
     }
-  }
 
-  @media (min-width: 900px) {
-    display: flex;
-
-    .mainNav ul {
-      li:first-child a {
-      padding-left: 10px;
-      }
-    }
+    // @media (min-width: 900px) {
+    //   padding-right: 40px;padding-rightpadding-rightpadding-right
+    // }
   }
 `
 
@@ -88,19 +81,21 @@ const Header = ({ siteTitle }) => {
 
   return (
     <header css={style}>
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          title="Home"
-          style={{
-            textDecoration: 'none'
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-      <nav className="mainNav">
+      <nav className="nav">
         <ul role="navigation">
+          <li>
+          <h1 style={{ margin: 0 }}>
+            <Link
+              to="/"
+              title="Home"
+              style={{
+                textDecoration: 'none'
+              }}
+            >
+              {siteTitle}
+            </Link>
+          </h1>
+          </li>
           {/* <li>
             <Link
               activeClassName="active"
@@ -125,8 +120,12 @@ const Header = ({ siteTitle }) => {
                 Projects
             </Link>
           </li>
-          <li>
-            <a title="Twitter @odysseycodes" target="_blank" rel="noopener noreferrer" href="https://twitter.com/odysseycodes">
+        </ul>
+      </nav>
+      <nav className="nav">
+        <ul role='navigation'>
+        <li>
+            <a title="Twitter @danieldobla" target="_blank" rel="noopener noreferrer" href="https://twitter.com/danieldobla">
               <Twitter />
             </a>
           </li>
