@@ -4,13 +4,13 @@ const emoji = require('remark-emoji')
 const highlight = require('remark-highlight.js')
 
 const siteUrl = 'https://dobladov.github.io'
-const title = 'Odyssey Codes'
+const title = 'Daniel Doblado'
 
 module.exports = {
   siteMetadata: {
     title,
     description: 'I\'m a Web Developer currently based in Berlin 🇩🇪, with true passion for open-source and building better platforms.',
-    author: '@odysseycodes',
+    author: '@dobladov',
     siteUrl,
     repositoryUrl: 'https://github.com/dobladov/mdx-blog/edit/master/'
   },

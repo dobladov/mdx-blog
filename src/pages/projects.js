@@ -83,7 +83,7 @@ const projects = [
       <p>Made with React.js and parcel bundler.</p>
     </>,
     links: [
-      ['Live', 'https://last-time.odyssey.codes/'],
+      ['Live', 'https://dobladov.github.io/last-time/'],
       ['Source', 'https://github.com/dobladov/last-time']
     ]
   },
@@ -109,7 +109,7 @@ const projects = [
       <p>Made with svelte and parcel-bundler</p>
     </>,
     links: [
-      ['Live', 'https://snoo.odyssey.codes/'],
+      ['Live', 'https://dobladov.github.io/snoo'],
       ['Source', 'https://github.com/dobladov/snoo']
     ]
   },
@@ -156,7 +156,7 @@ const projects = [
       <p>Made with Phaser.io a library for creating browser games.</p>
     </>,
     links: [
-      ['Live', 'https://odyssey.codes/Flappy-Bounce/'],
+      ['Live', 'https://dobladov.github.io/Flappy-Bounce/'],
       ['Source', 'https://github.com/dobladov/Flappy-Bounce']
     ]
   },
@@ -169,7 +169,7 @@ const projects = [
       <p>Also with multi-language support in both Spanish and English.</p>
     </>,
     links: [
-      ['Live', 'https://odyssey.codes/Hexoblado/'],
+      ['Live', 'https://dobladov.github.io/Hexoblado/'],
       ['Source', 'https://github.com/dobladov/Hexoblado']
     ]
   },
@@ -284,7 +284,7 @@ const projects = [
     ]
   },
   {
-    title: 'Odyssey Codes',
+    title: 'Personal Site',
     logo: <PortfolioLogo />,
     content: <>
       <p>The site you are visiting right now, build with Gatsby and using MDX for the articles</p>
